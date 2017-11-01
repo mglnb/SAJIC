@@ -1,0 +1,143 @@
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero_section {
+            background-image: url(../img/bg.jpg);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            ;
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            background-size: cover;
+            position: relative;
+            height: 100vh;
+            z-index: 1;
+        }
+
+        #poly-output canvas {
+            opacity: 0.9;
+        }
+
+        .poly-content {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .content {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        @font-face {
+            font-family: "Myriad Pro";
+            font-variant: normal;
+            font-style: normal;
+            font-weight: bold;
+            src: url("#FontID0") format(svg)
+        }
+
+        .fil6 {
+            fill: #fff;
+        }
+
+        .fil4 {
+            fill: transparent;
+            fill-rule: nonzero
+        }
+
+        .fil3 {
+            fill: transparent;
+            fill-rule: nonzero
+        }
+
+        .fil1 {
+            fill: #FFFFFF;
+            fill-rule: nonzero
+        }
+
+        .fil2 {
+            fill: #2A569F;
+            fill-rule: nonzero
+        }
+
+        .fil5 {
+            fill: #FFFFFF;
+            fill-rule: nonzero
+        }
+
+        .fil0 {
+            fill: #fff;
+            fill-rule: nonzero
+        }
+
+        .fnt0 {
+            font-weight: bold;
+            font-size: 882.656px;
+            font-family: 'Myriad Pro'
+        }
+
+        .fil1,
+        .fil2,
+        .fil5 {
+            animation: fil1 2s forwards;
+            fill: transparent;
+            stroke-width: 60px;
+            stroke: #Fff;
+            stroke-dashoffset: 18616;
+            stroke-dasharray: 18616;
+            z-index: 2000;
+        }
+        .fil0 {
+            fill: #fff;
+        }
+        .fil0:nth-child(odd) {
+            animation: odd 2s forwards;
+        }
+
+        .fil0:nth-child(even) {
+            animation: odd 2s forwards;
+        }
+
+        @keyframes odd {
+            0% {
+                opacity: 0
+            }
+            100% {
+                opacity: 1
+            }
+        }
+
+        @keyframes even {
+            from {
+                opacity: 0
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fil1 {
+            0% {
+                stroke-dashoffset: 18616;
+                fill: transparent;
+            }
+            50% {
+                fill: transparent;
+                stroke-width: 60px;
+            }
+            70% {
+                stroke-dashoffset: 0;
+            }
+            100% {
+                fill: #Fff;
+                stroke-width: 0
+            }
+        }
