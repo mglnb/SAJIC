@@ -1,0 +1,167 @@
+.timeline_section {
+    padding: 100px 0;
+    h1 {
+        text-align: center;
+        &:after {
+            content: '';
+            width: 5%;
+            margin: 30px auto 15px;
+            height: 1px;
+            background: #aaa;
+            display: block;
+        }
+    }
+    .timeline {
+        position: relative;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: inherit;
+        &:after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            background-color: rgb(102, 176, 236);
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            margin-left: 1px;
+        }
+        &.last-child:after{
+            height: 86.5%;
+        }
+    }
+    .timeline--first:after {
+        top: 20px;
+    }
+    .era {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        padding-bottom: 20px;
+        &__title {
+            background-color: rgb(102, 176, 236);
+            color: #EEEEEE;
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: default;
+        }
+    }
+    .entry {
+        padding: 10px 30px 40px;
+        width: 50%;
+        position: relative;
+        background-color: inherit;
+        figure {
+            margin: 0;
+        }
+        h2 {
+            color: #525252;
+            margin-bottom: 0.5em;
+            font-family: "Raleway", Helvetica, sans-serif;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        p {
+            color: #686868;
+            font-family: "Raleway", Helvetica, sans-serif;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+        &--right {
+            margin-left: 50%;
+            .entry__img {
+                align-items: center;
+                justify-content: flex-start;
+            }
+            &:before {
+                right: auto;
+                left: 10px;
+            }
+            &:after {
+                right: auto;
+                left: -11px;
+            }
+        }
+        &--left {
+            text-align: right
+        }
+        &__content {
+            padding: 20px 70px;
+            background-color: #FFFFFF;
+            position: relative;
+            cursor: default;
+            transition: all 0.3s ease 0s;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+        &__content .row {
+            align-items: center;
+        }
+        &__content:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+        &__img {
+            align-items: center;
+            justify-content: flex-end;
+            height: 100px;
+            margin-bottom: 20px;
+            cursor: pointer
+        }
+        &__img img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin: 0 10px;
+        }
+        &:before {
+            content: "";
+            display: block;
+            height: 1px;
+            position: absolute;
+            top: calc(45% + 12px);
+            right: 10px;
+            width: 21px;
+            z-index: 1;
+            background: rgb(102, 176, 236);
+            z-index: -1;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            right: -14px;
+            background-color: #FFF;
+            border: 1px solid rgb(102, 176, 236);
+            top: 45%;
+            border-radius: 50%;
+            z-index: 1;
+        }
+    }
+
+}
+
+@media all and (max-width: 500px) {
+    .timeline:after {
+        left: 33.75px;
+    }
+    .era {
+        text-align: left;
+        padding-left: 31.875px;
+    }
+    .entry {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 64px;
+        padding-right: 20px;
+    }
+    .entry:before {
+        right: auto;
+        left: 56px;
+        margin-left: 0;
+    }
+    .entry:after {
+        left: 15px;
+    }
+}

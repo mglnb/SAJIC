@@ -1,0 +1,112 @@
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    @include mobile {
+        margin: 0 15px;
+    }
+    
+    &-fluid {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.flex {
+    display: flex;
+
+    &.flex-center {
+        justify-content: center;
+        align-items: center;
+    }
+    &.flex-column {
+        flex-direction: column;
+    }
+    &.flex-space-around {
+        justify-content: space-around;
+    }
+    &.flex-space-between {
+        justify-content: space-between;
+    }
+}
+
+.section {
+    & > .flex {
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+    &-title {
+        text-align: center;
+        font-family: 'Bebas Neue';
+        font-weight: 600;
+        font-size: 40px;
+
+        @include mobile {
+            font-size: 30px;
+        }
+    }
+}
+
+.img-responsive {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-highlight {
+    &-bebas {
+        font-size: 22px!important;
+        font-family: 'Bebas Neue'!important;
+        font-weight: 600!important;
+    }
+}
+
+.btn {
+    border: 1px solid $white;
+    color: $white;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    padding: 0 25px;
+    cursor: pointer;
+    transition: opacity .2s;
+    font-family: 'Bebas Neue';
+    font-weight: 400;
+    font-size: 20px;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:visited {
+        color: $white;
+    }
+
+    i {
+        margin-left: 5px;
+    }
+    
+}
+
+.scroll-top {
+    background: $dark-purple;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 28px;
+    cursor: pointer;
+
+    i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

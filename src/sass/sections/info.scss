@@ -1,0 +1,29 @@
+.info_section {
+    color: #fff;
+    .column {
+        text-align: center;
+        padding: 100px 0;
+    }
+    .title {
+        margin-bottom: 20px;
+        h4 {
+            letter-spacing:3px;
+            font-weight: bold;
+        }
+    
+    }
+    .column:first-child {
+        background: no-repeat center center;
+        background-image: linear-gradient(to right, rgba(2, 137, 209, 0.7),rgba(2, 137, 209, 0.7)) ,url(../img/bg-edital.jpg);
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+    }
+    .column:last-child {
+        background: no-repeat top center;
+        background-image: linear-gradient(to right, rgba(64, 62, 175, 0.712),rgba(64, 62, 175, 0.712)) ,url(../img/bg-palestras.jpg);
+        background-size: cover;
+        
+    }
+
+}

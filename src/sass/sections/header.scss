@@ -1,0 +1,99 @@
+.hero_section {
+  background-image: url(../img/bg.jpg);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  ;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  z-index: 1;
+}
+
+#poly-output canvas {
+  opacity: 0.9;
+}
+
+.poly-content {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+
+.fil6 {
+  fill: #fff;
+}
+
+.fil4 {
+  fill: transparent;
+  fill-rule: nonzero
+}
+
+.fil3 {
+  fill: transparent;
+  fill-rule: nonzero
+}
+
+.fil1 {
+  fill: #FFFFFF;
+  fill-rule: nonzero
+}
+
+.fil2 {
+  fill: #2A569F;
+  fill-rule: nonzero
+}
+
+.fil5 {
+  fill: #FFFFFF;
+  fill-rule: nonzero
+}
+
+.fil0 {
+  fill: #fff;
+  fill-rule: nonzero
+}
+
+.fnt0 {
+  font-weight: bold;
+  font-size: 882.656px;
+  font-family: 'Myriad Pro'
+}
+
+.fil1,
+.fil2,
+.fil5 {
+  animation: fil1 2s forwards;
+  fill: transparent;
+  stroke-width: 60px;
+  stroke: #Fff;
+  stroke-dashoffset: 18616;
+  stroke-dasharray: 18616;
+  z-index: 2000;
+}
+
+.fil0 {
+  fill: #fff;
+  opacity: 0;
+  animation: opacity 1s forwards;
+}
+
+#_1843036923856 {
+  fill: #fff;
+  transform: translateX(200%);
+  opacity: 0;
+  animation: segunda-edicao 4s forwards;
+  animation-delay: .7s;
+}

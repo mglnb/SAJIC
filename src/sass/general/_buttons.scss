@@ -1,0 +1,20 @@
+.button-white {
+    background-color: white;
+    border-color: white;
+    transition: .1s;
+    letter-spacing: 2px;
+    &.button-clear,
+    &.button-outline {
+        background-color: transparent;
+        color: white;
+    }
+    &.button-clear {
+        border-color: transparent;
+    }
+    &:hover {
+        background-color: white !important;
+        color: $blue !important;
+        border-color: white !important;
+    }
+  }
+  

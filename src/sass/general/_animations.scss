@@ -1,0 +1,103 @@
+@keyframes hamburguer-1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg)
+  }
+}
+
+@keyframes hamburguer-2 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg)
+  }
+}
+
+@keyframes hamburguer-1-out {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(0)
+  }
+}
+
+@keyframes hamburguer-2-out {
+  from {
+    transform: rotate(-45deg);
+  }
+  to {
+    transform: rotate(0)
+  }
+}
+
+@keyframes menu-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes menu-out {
+  0% {
+    transform: scale(1);
+    visibility: visible;
+  }
+  100% {
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+@keyframes fil1 {
+  0% {
+    stroke-dashoffset: 18616;
+    fill: transparent;
+  }
+  50% {
+    fill: transparent;
+    stroke-width: 60px;
+  }
+  70% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    fill: #Fff;
+    stroke-width: 0
+  }
+}
+
+@keyframes segunda-edicao {
+  0% {
+    transform: translateX(200%);
+  }
+  30% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-2%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
