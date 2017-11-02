@@ -98,17 +98,17 @@
         .fil0 {
             fill: #fff;
             opacity: 0;
-            animation: odd 1s forwards;
+            animation: opacity 1s forwards;
         }
-        .fil10 {
+        #_1843036923856 {
             fill: #fff;
-            transform: translateX(2000%);
+            transform: translateX(200%);
+            opacity: 0;
+            animation: segunda-edicao 2s forwards;
             
-            animation: segunda-edicao 1.5s forwards;
-            animation-delay: 1.5s;
         }
 
-        @keyframes odd {
+        @keyframes opacity {
             0% {
                 opacity: 0
             }
@@ -117,14 +117,6 @@
             }
         }
 
-        @keyframes even {
-            0% {
-                opacity: 0
-            }
-            100% {
-                opacity: 1
-            }
-        }
 
         @keyframes fil1 {
             0% {
@@ -145,13 +137,18 @@
         }
         @keyframes segunda-edicao {
             0% {
-                transform: translateX(2000%);
+                transform: translateX(200%);
             }
-            70% {
-                transform: translateX(-10%);
+            30% {
+                transform: translateX(200%);
+                opacity:0;
+            }
+            50% {
+                transform: translateX(-2%);
             }
             
             100% {
                 transform: translateX(0);
+                opacity: 1;
             }
         }
