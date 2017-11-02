@@ -1,5 +1,5 @@
 {
-  "name": "maratona-inovacao",
+  "name": "SAJIC",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "prod": "webpack -p"
   },
   "keywords": [],
-  "author": "",
+  "author": "Miguel Boanova",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",

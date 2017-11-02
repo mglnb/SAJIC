@@ -10,7 +10,7 @@ module.exports = {
 
     entry: './src/main.js',
     output: {
-        path: path.resolve(__dirname, './dist'),
+        path: path.resolve(__dirname, './docs'),
         filename: 'bundle.js'
     },
     module: {
@@ -66,11 +66,11 @@ module.exports = {
             host: 'localhost',
             port: 3000,
             server: {
-                baseDir: path.resolve(__dirname, './dist')
+                baseDir: path.resolve(__dirname, './docs')
             },
             reload: true
         }),
-        new CleanWebpackPlugin('./dist')
+        new CleanWebpackPlugin('./docs')
     ]
 };
 
