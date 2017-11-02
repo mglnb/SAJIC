@@ -104,8 +104,8 @@
             fill: #fff;
             transform: translateX(200%);
             opacity: 0;
-            animation: segunda-edicao 2s forwards;
-            
+            animation: segunda-edicao 4s forwards;
+            animation-delay: .7s;
         }
 
         @keyframes opacity {
