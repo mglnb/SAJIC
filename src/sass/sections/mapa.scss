@@ -3,6 +3,7 @@
     background: linear-gradient(to right, rgba(2, 137, 209, 0.9),rgba(2, 137, 209, 0.9)), url(../img/bg-map.jpg) fixed no-repeat;
     background-size: cover;
     padding: 50px 0;
+    
     #map-svg {
         background: #fff;
         border-radius: 2px;
@@ -131,14 +132,54 @@
             text-align: left;
             background: #fff;
             padding: 30px 120px;
+            border: 1px solid #c4c6ca;
+            -webkit-box-shadow: 0 1px 0 #fff inset;
+            -moz-box-shadow: 0 1px 0 #fff inset;
+            -ms-box-shadow: 0 1px 0 #fff inset;
+            -o-box-shadow: 0 1px 0 #fff inset;
+            box-shadow: 0 1px 0 #fff inset;
             .title {
                 text-align: center;
+            }
+            &:after, &:before {
+                content: '';
+                background: #fff;
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                 border: 1px solid #c4c6ca;
+            
+            }
+            &:after {
+                transform: rotateZ(1deg);
+                border-color: lighten(#c4c6ca, 5%)
+            }
+            &::before {
+                transform: rotateZ(-1deg);
+                border-color: lighten(#c4c6ca, 10%)
+                
             }
         }
         .list {
             // overflow-y: scroll;
+            .list_row {
+
+                .column {
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    font-size: 13px;
+                    line-height: 31px;
+                }
+                .right {
+                    text-align: right;
+                }
+            }
             li {
-                padding: 20px;
+                padding: 10px 20px;
                 transition: .2s;
                 box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
                 &:hover {

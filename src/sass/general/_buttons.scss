@@ -8,6 +8,12 @@
         background-color: transparent;
         color: white;
     }
+    &:focus {
+        background-color: transparent !important;
+        color: white !important; 
+         border-color: white !important;
+    
+    }
     &.button-clear {
         border-color: transparent;
     }
@@ -16,6 +22,7 @@
         color: $blue !important;
         border-color: white !important;
     }
+
   }
   .button-large {
     font-size: 1.4rem;

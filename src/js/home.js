@@ -7,6 +7,8 @@ class Home {
         this.$map = document.querySelectorAll("#map-svg [class^='fil']")
         this.$modals = document.querySelectorAll(".modal")
         this.$closes = document.querySelectorAll(".close")
+        this.$btn_inscricao = document.getElementById("btn-inscricao")
+        this.$modal_inscricao = document.getElementById("modal-inscricao");
         this.bindEvents();
     }
 
@@ -29,9 +31,15 @@ class Home {
                 value.addEventListener('click', function () {
                     try{
                         elem.classList.add('active')
-                    }catch(e){}
+                    }catch(e){
+                        console.log("Item do mapa selecionado não tem informações")
+                    }
                 })
             }
+        })
+
+        this.$btn_inscricao.addEventListener('click', () => {
+            this.$modal_inscricao.classList.add('active')
         })
 
 
