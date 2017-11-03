@@ -1,27 +1,40 @@
 .mapa_section {
     text-align: center;
+    background: linear-gradient(to right, rgba(2, 137, 209, 0.9),rgba(2, 137, 209, 0.9)), url(../img/bg-map.jpg) fixed no-repeat;
+    background-size: cover;
+    padding: 50px 0;
+    #map-svg {
+        background: #fff;
+        border-radius: 2px;
+    }
     h1 {
+        color: #fff;
+        font-size: 3em;
+        letter-spacing: 3px;
+        font-weight: 700;
         &:after {
             content: '';
             width: 5%;
             margin: 30px auto 15px;
             height: 1px;
-            background: #aaa;
+            background: #fff;
             display: block;
         }
         small {
             display: block;
             font-size: 16px;
             letter-spacing: 1px;
+            font-weight: 300;
         }
     }
     [class^='fil'] {
+        transition: .5s;
         animation: none;
         stroke: #000;
         stroke-dashoffset: 0;
         stroke-dasharray: 0;
         stroke-width: 1px;
-        opacity: 0.6;
+        opacity: 0.8;
         cursor: pointer;
         &:hover {
             opacity: 1;
@@ -90,7 +103,18 @@
         font-size: 560.48px;
         font-family: 'Arial'
     }
+    #igreja, #coordenacao, #recepcao, #wcmasc,#wcfem  {
+        opacity: 1;
+        cursor: default;
+    }
+    
     .modal {
+        h1{
+            color: #333;
+            &:after {
+                background-color: #333;
+            }
+        }
         position: fixed;
         visibility: hidden;
     }

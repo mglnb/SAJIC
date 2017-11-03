@@ -2,6 +2,9 @@
     padding: 100px 0;
     h1 {
         text-align: center;
+        font-size: 3em;
+        letter-spacing: 3px;
+        font-weight: 700;
         &:after {
             content: '';
             width: 5%;
