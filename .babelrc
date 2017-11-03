@@ -1,4 +1,4 @@
 {
     "presets": ["es2015"],
-    "plugins": ["transform-remove-strict-mode"]
+    "plugins": ["babel-plugin-transform-remove-strict-mode"]
 }
