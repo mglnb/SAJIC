@@ -1,0 +1,101 @@
+
+  
+  .dropdown {
+    width: 100%;
+    a {
+        padding: .6rem 1.0rem;
+        display: flex;
+        min-height: 25px;
+        line-height: 24px;
+        overflow: hidden;
+        border: 1px solid #d1d1d1;
+        border-radius: .4rem;
+        width: 272px;
+        height: 3em;
+        color: #d1d1d1;
+        width: 100%;
+        align-items: center;
+        background: transparent;
+    }
+    input {
+        padding: 0;
+        margin: 0;
+        margin-right: 10px;
+        
+    }
+    label {
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        
+    }
+    li {
+        margin: 0;
+        padding: 10px 0;
+        &:hover {
+        
+        background: #eee
+        
+        }
+    }
+}
+
+  .dropdown dd,
+  .dropdown dt {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .dropdown ul {
+    margin: -1px 0 0 0;
+  }
+  
+  .dropdown dd {
+    position: relative;
+  }
+  
+  .dropdown a,
+  .dropdown a:visited {
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    font-size: 12px;
+  }
+  
+  
+  .dropdown dt a span,
+  .multiSel span {
+    cursor: pointer;
+    display: inline-block;
+    color: #444;
+    font-size: 16px;
+  }
+  
+  .dropdown dd ul {
+    background-color: #fff;
+    border: 0;
+    color: $dark-gray;
+    display: none;
+    left: 0px;
+    padding: 2px 15px 2px 5px;
+    position: absolute;
+    top: 2px;
+    width: 100%;
+    list-style: none;
+    height: 100px;
+    overflow: auto;
+  }
+  
+  .dropdown span.value {
+    display: none;
+  }
+  
+  .dropdown dd ul li a {
+    padding: 5px;
+    display: block;
+  }
+  
+  .dropdown dd ul li a:hover {
+    background-color: #fff;
+  }

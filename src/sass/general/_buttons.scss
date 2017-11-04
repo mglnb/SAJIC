@@ -10,9 +10,8 @@
     }
     &:focus {
         background-color: transparent !important;
-        color: white !important; 
-         border-color: white !important;
-    
+        color: white !important;
+        border-color: white !important;
     }
     &.button-clear {
         border-color: transparent;
@@ -22,12 +21,37 @@
         color: $blue !important;
         border-color: white !important;
     }
+}
 
-  }
-  .button-large {
+.button-blue {
+    background-color: $coral-blue !important;
+    border-color: $coral-blue !important;
+    color: $coral-blue !important;
+    transition: .1s;
+    letter-spacing: 2px;
+    &.button-clear,
+    &.button-outline {
+        background-color: transparent !important;
+        color: $coral-blue;
+    }
+    &:focus {
+        background-color: transparent !important;
+        color: $coral-blue !important;
+        border-color: $coral-blue !important;
+    }
+    &.button-clear {
+        border-color: transparent;
+    }
+    &:hover {
+        background-color: $coral-blue !important;
+        color: #fff !important;
+        border-color: $coral-blue !important;
+    }
+}
+
+.button-large {
     font-size: 1.4rem;
     height: 4.5rem;
     line-height: 4.5rem;
     padding: 0 2rem;
-  }
-  
+}

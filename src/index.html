@@ -26,6 +26,7 @@
 
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- <link rel="stylesheet" href="css/styles.css">  -->
 </head>
 
@@ -770,8 +771,62 @@
                     <div class="close">
                     </div>
                     <div class="form">
-                        <form action="">
+                        <form>
+                            <fieldset>
+                                <div class="row">
+                                    <div class="column">
+                                        <label for="nome">Nome *</label>
+                                        <input type="text" placeholder="Nome" id="nome" required>
+                                    </div>
+                                    <div class="column">
+                                        <label for="sobrenome">Sobrenome *</label>
+                                        <input type="text" placeholder="Sobrenome" id="sobrenome" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column">
+                                        <label for="email">E-mail *</label>
+                                        <input type="email" placeholder="E-mail" id="email" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column">
+                                        <label for="telefone">Telefone</label>
+                                        <input type="tel" placeholder="Telefone" id="telefone">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column">
+                                        <label for="dropdown">Palestras</label>
+                                        <dl class="dropdown">
+                                            <dt>
+                                                <a href="#">
+                                                    <span class="hida">Palestras</span>
+                                                    <p class="multiSel"></p>
+                                                </a>
+                                            </dt>
 
+                                            <dd>
+                                                <div class="mutliSelect">
+                                                    <ul>
+                                                    </ul>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column">
+                                        <div class="g-recaptcha" data-sitekey="6LfDLDcUAAAAAIAySVBtH4IxguqMOI5axK7RtuJ7"></div>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column">
+                                        <input class="button button-outline button-blue" type="submit" id="submit" value="Enviar">
+                                    </div>
+                                </div>
+                            </fieldset>
                         </form>
                     </div>
                 </div>
@@ -1270,6 +1325,23 @@
             </div>
         </div>
     </section>
+
+    <footer>
+        <div class="container flex flex-space-between">
+            <p>© Faculdade de Tecnologia Senac Pelotas. Alguns direitos reservados.
+                <br>
+                <span>
+                    Desenvolvido por
+                    <a href="https://www.linkedin.com/in/igormjq/" target="_blank"> Igor Quevedo</a>,
+                    <a href="https://www.linkedin.com/in/miguelboanova/" target="_blank">Miguel Boanova</a>,
+                    <a href="https://www.linkedin.com/in/dionatanlmelo" target="_blank">Dionatan Melo</a>
+                </span>
+
+            </p>
+
+        </div>
+    </footer>
+
 </body>
 
 </html>

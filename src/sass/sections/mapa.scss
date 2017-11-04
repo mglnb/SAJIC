@@ -51,7 +51,7 @@
             opacity: 0.6
         }
     }
-    #cantina {
+    #cantina { 
         fill: #F09E9E
     }
     .fil13 {
@@ -140,28 +140,6 @@
             box-shadow: 0 1px 0 #fff inset;
             .title {
                 text-align: center;
-            }
-            &:after, &:before {
-                content: '';
-                background: #fff;
-                width: 100%;
-                height: 100%;
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                 border: 1px solid #c4c6ca;
-            
-            }
-            &:after {
-                transform: rotateZ(1deg);
-                border-color: lighten(#c4c6ca, 5%)
-            }
-            &::before {
-                transform: rotateZ(-1deg);
-                border-color: lighten(#c4c6ca, 10%)
-                
             }
         }
         .list {
