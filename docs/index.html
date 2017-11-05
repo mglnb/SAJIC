@@ -26,7 +26,6 @@
 
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- <link rel="stylesheet" href="css/styles.css">  -->
 <link href="./bundle.css" rel="stylesheet"></head>
 
@@ -817,13 +816,14 @@
                                 </div>
                                 <div class="row">
                                     <div class="column">
-                                        <div class="g-recaptcha" data-sitekey="6LfDLDcUAAAAAIAySVBtH4IxguqMOI5axK7RtuJ7"></div>
-                                        <br>
+                                        <input class="button button-outline button-blue" type="submit" id="submit" value="Enviar">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="column">
-                                        <input class="button button-outline button-blue" type="submit" id="submit" value="Enviar">
+                                        <div class="notification success" style="display: none">
+                                            <p>Ocorreu um erro</p>
+                                        </div>
                                     </div>
                                 </div>
                             </fieldset>

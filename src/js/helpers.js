@@ -5,3 +5,8 @@ export const scrollIt = (element) => {
         'top': element.offsetTop
     });
 };
+export const delay = (t) => {
+    return new Promise(function (resolve) {
+        setTimeout(resolve, t);
+    });
+}

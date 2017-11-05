@@ -1,5 +1,6 @@
 import firebase from 'firebase'
 import $ from 'jquery'
+import {delay} from '../js/helpers'
 class Firebase {
     constructor() {
         this.$firebase = firebase.initializeApp({
@@ -11,7 +12,7 @@ class Firebase {
             messagingSenderId: "526527730693"
         })
         this.$ul = $('.mutliSelect ul')
-
+        this.$notification = $('.notification')
         this.$subscriber = {
             nome: $('#nome'),
             sobrenome: $('#sobrenome'),
@@ -33,13 +34,13 @@ class Firebase {
                 let palestras = snapshot
                 palestras.forEach((value, index) => {
                     this.$ul.append(`<li>
-                                            <label>
+                                            <label class="palestra">
                                                 <input type="checkbox" value="${value.val().palestra} " />${value.val().palestra}
                                             </label>
                                     </li>`)
                 })
 
-            });
+            })
 
 
         this.$subscriber.submit.on('click', (e) => {
@@ -58,26 +59,29 @@ class Firebase {
             if (data.name && data.lastname && data.email && data.email.indexOf('@') != -1) {
                 e.preventDefault()
                 let db = this.$db
-                $.post('https://www.google.com/recaptcha/api/siteverify', {
-                        'secret': '6LfDLDcUAAAAAPJR7wcSCVlBKI4CY0TSKeLQHSet',
-                        'reponse': $('.g-recaptcha').val()
-                    }).done(function () {
-                        db.ref('subscribers')
-                            .push(data)
-                            .then(function () {
-                                alert('Inscrição realizada com sucesso')
-                            })
-                            .catch(function (e) {
-                                alert('Ocorreu um erro na inscrição')
-                                console.log(e)
-                            })
+
+                db.ref('subscribers')
+                    .push(data)
+                    .then( () => {
+                        this.$notification.addClass('success')
+                        this.$notification.html('<p>Inscrição realizada com sucesso</p>')
+                        this.$notification.slideToggle('slow')
+                        delay(3000).then(() => {
+                            this.$notification.slideToggle('slow')
+                        }).then(() => {
+                            this.$notification.removeClass('success')
+                        })
                     })
-                    .fail(function () {
-                        alert("error");
+                    .catch((e) => {
+                        this.$notification.addClass('error')
+                        this.$notification.html('<p>Ocorreu um erro, tente mais tarde</p>')
+                        this.$notification.slideToggle('slow')
+                        delay(3000).then(() => {
+                            this.$notification.slideToggle('slow')
+                        }).then(() => {
+                            this.$notification.removeClass('error')
+                        })
                     })
-                    .always(function () {
-                        alert("finished");
-                    });
 
 
             }
@@ -85,4 +89,4 @@ class Firebase {
     }
 }
 
-export default new Firebase();
+export default new Firebase()

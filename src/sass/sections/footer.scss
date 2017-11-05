@@ -1,15 +1,13 @@
 footer {
     padding: 20px 50px;
-
     @include mobile {
-        padding: 0;
+        padding: 20px 0;
     }
-
     p {
         color: $dark-gray;
         font-size: 12px;
     }
-    a{
+    a {
         color: $coral-blue;
     }
 }

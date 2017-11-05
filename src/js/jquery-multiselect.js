@@ -21,20 +21,25 @@ $(".dropdown dt a").on('click', function() {
     var $clicked = $(e.target);
     if (!$clicked.parents().hasClass("dropdown")) $(".dropdown dd ul").hide();
   });
-  
-  $('.mutliSelect input[type="checkbox"]').on('click', function() {
-  
-    var title = $(this).closest('.mutliSelect').find('input[type="checkbox"]').val(),
-      title = $(this).val() + ",";
-  
-    if ($(this).is(':checked')) {
-      var html = '<span title="' + title + '">' + title + '</span>';
-      $('.multiSel').append(html);
-      $(".hida").hide();
-    } else {
-      $('span[title="' + title + '"]').remove();
-      var ret = $(".hida");
-      $('.dropdown dt a').append(ret);
-  
-    }
-  });
+  $(document).ready(function() {
+    $('.mutliSelect label').on('click', function() {
+        console.log('porra')
+        var title = $(this).closest('.mutliSelect').find('label').val(),
+          title = $(this).val() + ",";
+      
+        if ($(this).is(':checked')) {
+          var html = '<span title="' + title + '">' + title + '</span>';
+          $('.multiSel').append(html);
+          $(".hida").hide();
+        } else {
+          $('span[title="' + title + '"]').remove();
+          var ret = $(".hida");
+          $('.dropdown dt a').append(ret);
+      
+        }
+      });
+  })
+ 
+  $('label.palestra').on('click', function() {
+    console.log("teste")
+})

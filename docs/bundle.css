@@ -25,9 +25,6 @@ body {
 .container {
   max-width: 1280px;
   margin: 0 auto; }
-  @media screen and (max-width: 767px) {
-    .container {
-      margin: 0 15px; } }
   .container-fluid {
     max-width: 100vw;
     width: 100%; }
@@ -109,6 +106,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 1em; } }
 
 .button-white {
   background-color: white;
@@ -347,6 +348,17 @@ body {
 .dropdown dd ul li a:hover {
   background-color: #fff; }
 
+.notification {
+  border-radius: 3px;
+  color: #fff; }
+  .notification p {
+    width: 100%;
+    padding: 10px 20px; }
+  .notification.error {
+    background: red; }
+  .notification.success {
+    background: green; }
+
 .hero_section {
   background-image: url(img/bg.jpg);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -374,6 +386,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center; }
+  .content svg {
+    max-height: 80vh; }
 
 .fil6 {
   fill: #fff; }
@@ -478,6 +492,11 @@ body {
     width: 50%;
     position: relative;
     background-color: inherit; }
+    @media screen and (max-width: 767px) {
+      .timeline_section .entry {
+        padding: 10px 0 40px 0px;
+        width: 100%;
+        z-index: 9000; } }
     .timeline_section .entry figure {
       margin: 0; }
     .timeline_section .entry h2 {
@@ -486,13 +505,23 @@ body {
       font-family: "Raleway", Helvetica, sans-serif;
       font-size: 22px;
       font-weight: bold; }
+      @media screen and (max-width: 767px) {
+        .timeline_section .entry h2 {
+          font-size: 16px; } }
     .timeline_section .entry p {
       color: #686868;
       font-family: "Raleway", Helvetica, sans-serif;
       font-size: 15px;
       line-height: 1.4; }
+      @media screen and (max-width: 767px) {
+        .timeline_section .entry p {
+          font-size: 14px; } }
     .timeline_section .entry--right {
       margin-left: 50%; }
+      @media screen and (max-width: 767px) {
+        .timeline_section .entry--right {
+          text-align: center;
+          margin-left: 0; } }
       .timeline_section .entry--right .entry__img {
         align-items: center;
         justify-content: flex-start; }
@@ -504,6 +533,9 @@ body {
         left: -11px; }
     .timeline_section .entry--left {
       text-align: right; }
+      @media screen and (max-width: 767px) {
+        .timeline_section .entry--left {
+          text-align: center; } }
     .timeline_section .entry__content {
       padding: 20px 70px;
       background-color: #FFFFFF;
@@ -512,6 +544,9 @@ body {
       transition: all 0.3s ease 0s;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+      @media screen and (max-width: 767px) {
+        .timeline_section .entry__content {
+          padding: 20px 10px; } }
     .timeline_section .entry__content .row {
       align-items: center; }
     .timeline_section .entry__content:hover {
@@ -539,6 +574,9 @@ body {
       z-index: 1;
       background: #66b0ec;
       z-index: -1; }
+      @media screen and (max-width: 767px) {
+        .timeline_section .entry:before {
+          content: none; } }
     .timeline_section .entry:after {
       content: '';
       position: absolute;
@@ -550,24 +588,9 @@ body {
       top: 45%;
       border-radius: 50%;
       z-index: 1; }
-
-@media all and (max-width: 500px) {
-  .timeline:after {
-    left: 33.75px; }
-  .era {
-    text-align: left;
-    padding-left: 31.875px; }
-  .entry {
-    width: 100%;
-    margin-left: 0;
-    padding-left: 64px;
-    padding-right: 20px; }
-  .entry:before {
-    right: auto;
-    left: 56px;
-    margin-left: 0; }
-  .entry:after {
-    left: 15px; } }
+      @media screen and (max-width: 767px) {
+        .timeline_section .entry:after {
+          content: none; } }
 
 input[type='email']:focus, input[type='number']:focus, input[type='password']:focus, input[type='search']:focus, input[type='tel']:focus, input[type='text']:focus, input[type='url']:focus, textarea:focus, select:focus {
   border-color: #3fa0d2; }
@@ -582,8 +605,14 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
     .info_section .title h3 {
       letter-spacing: 3px;
       font-weight: bold; }
+      @media screen and (max-width: 767px) {
+        .info_section .title h3 {
+          font-size: 19px; } }
     .info_section .title p {
       font-size: 18px; }
+      @media screen and (max-width: 767px) {
+        .info_section .title p {
+          font-size: 14px; } }
   .info_section .column:first-child {
     background: no-repeat center center;
     background-image: linear-gradient(to right, rgba(2, 137, 209, 0.7), rgba(2, 137, 209, 0.7)), url(img/bg-edital.jpg);
@@ -600,6 +629,12 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
   background: linear-gradient(to right, rgba(2, 137, 209, 0.9), rgba(2, 137, 209, 0.9)), url(img/bg-map.jpg) fixed no-repeat;
   background-size: cover;
   padding: 50px 0; }
+  @media screen and (max-width: 767px) {
+    .mapa_section .map {
+      overflow-y: scroll; } }
+  @media screen and (max-width: 767px) {
+    .mapa_section .map svg {
+      width: 800px; } }
   .mapa_section #map-svg {
     background: #fff;
     border-radius: 2px; }
@@ -675,7 +710,11 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
     font-weight: normal;
     font-size: 560.48px;
     font-family: 'Arial'; }
-  .mapa_section #igreja, .mapa_section #coordenacao, .mapa_section #recepcao, .mapa_section #wcmasc, .mapa_section #wcfem {
+  .mapa_section #igreja,
+  .mapa_section #coordenacao,
+  .mapa_section #recepcao,
+  .mapa_section #wcmasc,
+  .mapa_section #wcfem {
     opacity: 1;
     cursor: default; }
   .mapa_section .modal {
@@ -685,6 +724,9 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
       color: #333; }
       .mapa_section .modal h1:after {
         background-color: #333; }
+      @media screen and (max-width: 767px) {
+        .mapa_section .modal h1 {
+          font-size: 1.5em; } }
   .mapa_section .modal.active {
     visibility: visible;
     width: 100%;
@@ -698,14 +740,20 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
       text-align: left;
       background: #fff;
       padding: 30px 120px;
-      border: 1px solid #c4c6ca;
-      -webkit-box-shadow: 0 1px 0 #fff inset;
-      -moz-box-shadow: 0 1px 0 #fff inset;
-      -ms-box-shadow: 0 1px 0 #fff inset;
-      -o-box-shadow: 0 1px 0 #fff inset;
-      box-shadow: 0 1px 0 #fff inset; }
+      width: 100%;
+      border: 1px solid #c4c6ca; }
+      @media screen and (max-width: 767px) {
+        .mapa_section .modal.active .card {
+          padding: 20px 10px; } }
       .mapa_section .modal.active .card .title {
         text-align: center; }
+    @media screen and (max-width: 767px) {
+      .mapa_section .modal.active .list {
+        overflow-y: scroll;
+        height: 60vh; } }
+    @media screen and (max-width: 767px) {
+      .mapa_section .modal.active .list .list_row {
+        flex-direction: row; } }
     .mapa_section .modal.active .list .list_row .column {
       padding: 0 !important;
       margin: 0 !important;
@@ -727,6 +775,10 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
       padding: 10px;
       top: 40px;
       right: 40px; }
+      @media screen and (max-width: 767px) {
+        .mapa_section .modal.active .close {
+          top: 23px;
+          right: 23px; } }
       .mapa_section .modal.active .close:before, .mapa_section .modal.active .close:after {
         content: '';
         display: block;
@@ -736,6 +788,9 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
         position: absolute;
         top: 0;
         right: 15px; }
+        @media screen and (max-width: 767px) {
+          .mapa_section .modal.active .close:before, .mapa_section .modal.active .close:after {
+            height: 25px; } }
       .mapa_section .modal.active .close:before {
         transform: rotate(45deg); }
       .mapa_section .modal.active .close:after {
@@ -745,7 +800,7 @@ footer {
   padding: 20px 50px; }
   @media screen and (max-width: 767px) {
     footer {
-      padding: 0; } }
+      padding: 20px 0; } }
   footer p {
     color: #525252;
     font-size: 12px; }

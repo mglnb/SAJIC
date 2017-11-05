@@ -1,9 +1,18 @@
 .mapa_section {
     text-align: center;
-    background: linear-gradient(to right, rgba(2, 137, 209, 0.9),rgba(2, 137, 209, 0.9)), url(../img/bg-map.jpg) fixed no-repeat;
+    background: linear-gradient(to right, rgba(2, 137, 209, 0.9), rgba(2, 137, 209, 0.9)), url(../img/bg-map.jpg) fixed no-repeat;
     background-size: cover;
     padding: 50px 0;
-    
+    .map {
+        @include mobile {
+            overflow-y: scroll
+        }
+        svg {
+            @include mobile {
+                width: 800px;
+            }
+        }
+    }
     #map-svg {
         background: #fff;
         border-radius: 2px;
@@ -51,7 +60,7 @@
             opacity: 0.6
         }
     }
-    #cantina { 
+    #cantina {
         fill: #F09E9E
     }
     .fil13 {
@@ -104,16 +113,22 @@
         font-size: 560.48px;
         font-family: 'Arial'
     }
-    #igreja, #coordenacao, #recepcao, #wcmasc,#wcfem  {
+    #igreja,
+    #coordenacao,
+    #recepcao,
+    #wcmasc,
+    #wcfem {
         opacity: 1;
         cursor: default;
     }
-    
     .modal {
-        h1{
+        h1 {
             color: #333;
             &:after {
                 background-color: #333;
+            }
+            @include mobile {
+                font-size: 1.5em
             }
         }
         position: fixed;
@@ -132,25 +147,31 @@
             text-align: left;
             background: #fff;
             padding: 30px 120px;
+            width: 100%;
             border: 1px solid #c4c6ca;
-            -webkit-box-shadow: 0 1px 0 #fff inset;
-            -moz-box-shadow: 0 1px 0 #fff inset;
-            -ms-box-shadow: 0 1px 0 #fff inset;
-            -o-box-shadow: 0 1px 0 #fff inset;
-            box-shadow: 0 1px 0 #fff inset;
+            @include mobile {
+                padding: 20px 10px;
+            }
             .title {
                 text-align: center;
             }
         }
         .list {
             // overflow-y: scroll;
+            @include mobile {
+                overflow-y: scroll;
+                height: 60vh;
+            }
             .list_row {
-
+                @include mobile {
+                    flex-direction: row;
+                }
                 .column {
                     padding: 0 !important;
                     margin: 0 !important;
                     font-size: 13px;
                     line-height: 31px;
+                   
                 }
                 .right {
                     text-align: right;
@@ -173,6 +194,10 @@
             padding: 10px;
             top: 40px;
             right: 40px;
+            @include mobile {
+                top: 23px;
+                right: 23px;
+            }
             &:before,
             &:after {
                 content: '';
@@ -183,6 +208,9 @@
                 position: absolute;
                 top: 0;
                 right: 15px;
+                @include mobile {
+                    height: 25px;
+                }
             }
             &:before {
                 transform: rotate(45deg)

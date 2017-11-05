@@ -12,9 +12,15 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
         h3 {
             letter-spacing:3px;
             font-weight: bold;
+            @include mobile {
+                font-size: 19px;
+            }
         }
         p {
             font-size: 18px;
+            @include mobile {
+                font-size: 14px;
+            }
         }
     
     }
@@ -24,6 +30,7 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
         background-size: cover;
         position: relative;
         z-index: 1;
+        
     }
     .column:last-child {
         background: no-repeat top center;
