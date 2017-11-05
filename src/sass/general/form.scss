@@ -1,0 +1,57 @@
+#modal-inscricao {
+    >.card {
+        padding: 30px;
+    }
+    .column {
+        position: relative;
+
+        &.double-field {
+            margin-left: -20px;
+
+            @include mobile {
+                margin-left: 0;
+            }
+        }
+
+        input, a {
+            border-radius: 0;
+            
+            &.custom-input {
+                margin: 10px 0;
+                padding: 5px 10px;
+                position: relative;
+        
+                &+i {
+                    position: absolute;
+                    top: 50%;
+                    right: 20px;
+                    transform: translateY(-50%);
+                    font-weight: 100;
+                    font-size: 20px;
+                    color: $coral-blue;
+                    background: $white;
+
+                }
+    
+                &#sobrenome {
+                    padding-left: 10px;
+                    border-left: none;
+
+                    @include mobile {
+                        border-left: 0.1rem solid #d1d1d1;
+                    }
+                }
+            }
+            
+            &[type='submit'] {
+                width: 100%;
+            }
+        }
+    }
+
+    .dropdown dd ul {
+        z-index: 999;
+        padding: 0;
+    }
+
+}

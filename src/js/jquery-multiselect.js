@@ -5,41 +5,43 @@ import $ from 'jquery'
 	license: https://www.opensource.org/licenses/mit-license.php
 */
 
-$(".dropdown dt a").on('click', function() {
-    $(".dropdown dd ul").slideToggle('fast');
+$(".dropdown dt a").on('click', function () {
+  const $arrowDown = $(this).parents('.dropdown').next('i');
+  $arrowDown.toggleClass('open');
+  $(".dropdown dd ul").slideToggle('fast');
+});
+
+$(".dropdown dd ul li a").on('click', function () {
+  $(".dropdown dd ul").hide();
+});
+
+function getSelectedValue(id) {
+  return $("#" + id).find("dt a span.value").html();
+}
+
+$(document).bind('click', function (e) {
+  var $clicked = $(e.target);
+  if (!$clicked.parents().hasClass("dropdown")) $(".dropdown dd ul").hide();
+});
+$(document).ready(function () {
+  $('.mutliSelect label').on('click', function () {
+
+    var title = $(this).closest('.mutliSelect').find('label').val(),
+      title = $(this).val() + ",";
+
+    if ($(this).is(':checked')) {
+      var html = '<span title="' + title + '">' + title + '</span>';
+      $('.multiSel').append(html);
+      $(".hida").hide();
+    } else {
+      $('span[title="' + title + '"]').remove();
+      var ret = $(".hida");
+      $('.dropdown dt a').append(ret);
+
+    }
   });
-  
-  $(".dropdown dd ul li a").on('click', function() {
-    $(".dropdown dd ul").hide();
-  });
-  
-  function getSelectedValue(id) {
-    return $("#" + id).find("dt a span.value").html();
-  }
-  
-  $(document).bind('click', function(e) {
-    var $clicked = $(e.target);
-    if (!$clicked.parents().hasClass("dropdown")) $(".dropdown dd ul").hide();
-  });
-  $(document).ready(function() {
-    $('.mutliSelect label').on('click', function() {
-        console.log('porra')
-        var title = $(this).closest('.mutliSelect').find('label').val(),
-          title = $(this).val() + ",";
-      
-        if ($(this).is(':checked')) {
-          var html = '<span title="' + title + '">' + title + '</span>';
-          $('.multiSel').append(html);
-          $(".hida").hide();
-        } else {
-          $('span[title="' + title + '"]').remove();
-          var ret = $(".hida");
-          $('.dropdown dt a').append(ret);
-      
-        }
-      });
-  })
- 
-  $('label.palestra').on('click', function() {
-    console.log("teste")
+})
+
+$('label.palestra').on('click', function () {
+  console.log("teste")
 })

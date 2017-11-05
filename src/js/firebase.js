@@ -33,10 +33,12 @@ class Firebase {
             .then(snapshot => {
                 let palestras = snapshot
                 palestras.forEach((value, index) => {
+                    console.log('i', value.key)
                     this.$ul.append(`<li>
-                                            <label class="palestra">
-                                                <input type="checkbox" value="${value.val().palestra} " />${value.val().palestra}
-                                            </label>
+                                            <div class="palestra">
+                                                <input id="palestra-${value.key}" type="checkbox" value="${value.val().palestra}" />
+                                                <label for="palestra-${value.key}">${value.val().palestra}</span>
+                                            </div>
                                     </li>`)
                 })
 
