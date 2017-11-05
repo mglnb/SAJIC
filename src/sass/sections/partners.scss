@@ -24,6 +24,7 @@
         
         .logo {
             margin: 15px;
+            cursor: pointer;
 
             &-mock {
                 width: 100px;
@@ -31,6 +32,7 @@
                 background: #aaa;
                 border-radius: 50px;
                 position: relative;
+                transition: transform .2s;
 
                 &:before {
                     content: 'L';
@@ -43,6 +45,10 @@
                     font-weight: 600;
 
                 }
+            }
+
+            &:hover {
+                transform: scale(1.05);
             }
         }
     }

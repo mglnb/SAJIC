@@ -824,13 +824,15 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
     margin: 0 auto;
     padding: 50px 0; }
     .partners_section .companies .logo {
-      margin: 15px; }
+      margin: 15px;
+      cursor: pointer; }
       .partners_section .companies .logo-mock {
         width: 100px;
         height: 100px;
         background: #aaa;
         border-radius: 50px;
-        position: relative; }
+        position: relative;
+        transition: transform .2s; }
         .partners_section .companies .logo-mock:before {
           content: 'L';
           position: absolute;
@@ -840,6 +842,8 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
           color: #FFF;
           font-size: 36px;
           font-weight: 600; }
+      .partners_section .companies .logo:hover {
+        transform: scale(1.05); }
 
 footer {
   padding: 20px 50px; }
