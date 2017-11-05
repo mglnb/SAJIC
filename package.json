@@ -8,7 +8,7 @@
     "prod": "webpack -p"
   },
   "keywords": [],
-  "author": "Miguel Boanova",
+  "author": "Miguel Boanova, Igor Quevedo, Dionatan Melo",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",
