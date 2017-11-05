@@ -16,6 +16,7 @@ class Firebase {
         this.$ul = $('.mutliSelect ul')
         this.$notification = $('.notification')
         this.$subscriber = {
+            id: '',
             nome: $('#nome'),
             sobrenome: $('#sobrenome'),
             email: $('#email'),
@@ -29,48 +30,66 @@ class Firebase {
     }
 
     bindEvents() {
-
+        let palestraKey
         this.$db
             .ref("palestra")
             .once("value")
             .then(snapshot => {
                 let palestras = snapshot
                 palestras.forEach((value, index) => {
+                    palestraKey = value.key
                     console.log('i', value.key)
-                    this.$ul.append(`<li>
+                    console.dir(value.val().subscribers)
+                    if (Object.keys(value.val().subscribers).length >= value.val().numeroPessoas) {
+                        this.$ul.append(`<li>
+                                                <div class="palestra">
+                                                    <input id="palestra-${value.key}" type="checkbox" value="${value.val().palestra}" disabled />
+                                                    <label for="palestra-${value.key}" disabled><s>${value.val().palestra}</s></span>
+                                                    <small>Esgotado</small>
+                                                </div>
+                                        </li>`)
+                    } else {
+                        this.$ul.append(`<li>
                                             <div class="palestra">
                                                 <input id="palestra-${value.key}" type="checkbox" value="${value.val().palestra}" />
                                                 <label for="palestra-${value.key}">${value.val().palestra}</span>
                                             </div>
                                     </li>`)
+                    }
                 })
-
-            }).then(() => {
+                return palestraKey
+            }).then((key) => {
+                // visual
+                let arrayPalestras = []
                 let self = this;
                 let palestras = document.querySelectorAll('.palestra')
                 palestras.forEach((value, index) => {
                     value.addEventListener('change', function () {
                         if (this.children[0].checked == true) {
-                            self.$palestras.push(this.children[0].value)
+                            // firebase
+                            self.$palestras.push(key)
+                            // visual
+                            arrayPalestras.push(this.children[0].value)
 
-                            let html = `<span title="${self.$palestras[self.$palestras.length - 1]}">${self.$palestras[self.$palestras.length - 1]}</span>`
+                            let html = `<span title="${arrayPalestras[arrayPalestras.length -1 ]}">${arrayPalestras[arrayPalestras.length -1 ]}</span>`
                             $('.multiSel').append(html)
                             console.log('checkado', self.$palestras)
                             $('.hida').hide();
                         } else {
-                            let index = self.$palestras.indexOf(this.children[0].value)
+                            let index = self.$palestras.indexOf(key)
+                            let indexArray = arrayPalestras.indexOf(arrayPalestras[arrayPalestras.length - 1])
                             console.log(index)
                             if (index > -1) {
                                 self.$palestras.splice(index, 1);
+                                arrayPalestras.splice(indexArray, 1)
                             }
-                            let html = `<span title="${self.$palestras}">${self.$palestras}</span>`
+                            let html = `<span title="${arrayPalestras}">${arrayPalestras}</span>`
                             // $(`span[title=${self.$palestras[index]}]`).remove()
 
                             $('.multiSel').html(html)
                             if (self.$palestras.length < 1) {
                                 $('span[title]').remove()
                                 $('.hida').show();
-
                             }
                             console.log('descheckou', self.$palestras)
                         }
@@ -108,7 +127,10 @@ class Firebase {
                 } else {
                     db.ref('subscribers')
                         .push(data)
-                        .then(() => {
+                        .then((key) => {
+                            data.palestras.forEach((value, index) => {
+                                db.ref(`palestra/${value}/subscribers/`).push(data)
+                            })
                             this.$notification.addClass('success')
                             this.$notification.html('<p>Inscrição realizada com sucesso</p>')
                             this.$notification.slideToggle('slow')
@@ -119,6 +141,7 @@ class Firebase {
                             })
                         })
                         .catch((e) => {
+                            console.log(e)
                             this.$notification.addClass('error')
                             this.$notification.html('<p>Ocorreu um erro, tente mais tarde</p>')
                             this.$notification.slideToggle('slow')
@@ -128,6 +151,8 @@ class Firebase {
                                 this.$notification.removeClass('error')
                             })
                         })
+
+
 
                 }
             }
