@@ -24402,6 +24402,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 */
 
 (0, _jquery2.default)(".dropdown dt a").on('click', function () {
+  var $arrowDown = (0, _jquery2.default)(this).parents('.dropdown').next('i');
+  $arrowDown.toggleClass('open');
   (0, _jquery2.default)(".dropdown dd ul").slideToggle('fast');
 });
 
@@ -24413,10 +24415,31 @@ function getSelectedValue(id) {
   return (0, _jquery2.default)("#" + id).find("dt a span.value").html();
 }
 
-//   $(document).bind('click', function(e) {
-//     var $clicked = $(e.target);
-//     if (!$clicked.parents().hasClass("dropdown")) $(".dropdown dd ul").hide();
-//   });
+(0, _jquery2.default)(document).bind('click', function (e) {
+  var $clicked = (0, _jquery2.default)(e.target);
+  if (!$clicked.parents().hasClass("dropdown")) (0, _jquery2.default)(".dropdown dd ul").hide();
+});
+(0, _jquery2.default)(document).ready(function () {
+  (0, _jquery2.default)('.mutliSelect label').on('click', function () {
+
+    var title = (0, _jquery2.default)(this).closest('.mutliSelect').find('label').val(),
+        title = (0, _jquery2.default)(this).val() + ",";
+
+    if ((0, _jquery2.default)(this).is(':checked')) {
+      var html = '<span title="' + title + '">' + title + '</span>';
+      (0, _jquery2.default)('.multiSel').append(html);
+      (0, _jquery2.default)(".hida").hide();
+    } else {
+      (0, _jquery2.default)('span[title="' + title + '"]').remove();
+      var ret = (0, _jquery2.default)(".hida");
+      (0, _jquery2.default)('.dropdown dt a').append(ret);
+    }
+  });
+});
+
+(0, _jquery2.default)('label.palestra').on('click', function () {
+  console.log("teste");
+});
 
 /***/ }),
 /* 83 */
@@ -25184,7 +25207,8 @@ var Firebase = function () {
             this.$db.ref("palestra").once("value").then(function (snapshot) {
                 var palestras = snapshot;
                 palestras.forEach(function (value, index) {
-                    _this.$ul.append('<li>\n                                            <label class="palestra">\n                                                <input type="checkbox" value="' + value.val().palestra + ' " />' + value.val().palestra + '\n                                            </label>\n                                    </li>');
+                    console.log('i', value.key);
+                    _this.$ul.append('<li>\n                                            <div class="palestra">\n                                                <input id="palestra-' + value.key + '" type="checkbox" value="' + value.val().palestra + '" />\n                                                <label for="palestra-' + value.key + '">' + value.val().palestra + '</span>\n                                            </div>\n                                    </li>');
                 });
             }).then(function () {
                 var self = _this;
