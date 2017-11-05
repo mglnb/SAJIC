@@ -1,6 +1,8 @@
 import firebase from 'firebase'
 import $ from 'jquery'
-import {delay} from '../js/helpers'
+import {
+    delay
+} from '../js/helpers'
 class Firebase {
     constructor() {
         this.$firebase = firebase.initializeApp({
@@ -22,11 +24,12 @@ class Firebase {
         }
         this.$db = this.$firebase.database()
         this.$auth = this.$firebase.auth()
-
+        this.$palestras = []
         this.bindEvents()
     }
 
     bindEvents() {
+
         this.$db
             .ref("palestra")
             .once("value")
@@ -42,6 +45,37 @@ class Firebase {
                                     </li>`)
                 })
 
+            }).then(() => {
+                let self = this;
+                let palestras = document.querySelectorAll('.palestra')
+                palestras.forEach((value, index) => {
+                    value.addEventListener('change', function () {
+                        if (this.children[0].checked == true) {
+                            self.$palestras.push(this.children[0].value)
+
+                            let html = `<span title="${self.$palestras[self.$palestras.length - 1]}">${self.$palestras[self.$palestras.length - 1]}</span>`
+                            $('.multiSel').append(html)
+                            console.log('checkado', self.$palestras)
+                            $('.hida').hide();
+                        } else {
+                            let index = self.$palestras.indexOf(this.children[0].value)
+                            console.log(index)
+                            if (index > -1) {
+                                self.$palestras.splice(index, 1);
+                            }
+                            let html = `<span title="${self.$palestras}">${self.$palestras}</span>`
+                            // $(`span[title=${self.$palestras[index]}]`).remove()
+
+                            $('.multiSel').html(html)
+                            if (self.$palestras.length < 1) {
+                                $('span[title]').remove()
+                                $('.hida').show();
+
+                            }
+                            console.log('descheckou', self.$palestras)
+                        }
+                    })
+                })
             })
 
 
@@ -53,6 +87,7 @@ class Firebase {
                 lastname: subs.sobrenome.val(),
                 email: subs.email.val(),
                 tel: subs.telefone.val() || 'vazio',
+                palestras: this.$palestras,
                 created_at: new Date(Date.now()).toLocaleDateString("pt-BR") + " " + new Date(Date.now()).toLocaleTimeString("pt-BR")
             }
 
@@ -61,31 +96,40 @@ class Firebase {
             if (data.name && data.lastname && data.email && data.email.indexOf('@') != -1) {
                 e.preventDefault()
                 let db = this.$db
-
-                db.ref('subscribers')
-                    .push(data)
-                    .then( () => {
-                        this.$notification.addClass('success')
-                        this.$notification.html('<p>Inscrição realizada com sucesso</p>')
+                if (data.palestras.length === 0) {
+                    this.$notification.addClass('error')
+                    this.$notification.html('<p>Preencha as palestras</p>')
+                    this.$notification.slideToggle('slow')
+                    delay(3000).then(() => {
                         this.$notification.slideToggle('slow')
-                        delay(3000).then(() => {
-                            this.$notification.slideToggle('slow')
-                        }).then(() => {
-                            this.$notification.removeClass('success')
-                        })
+                    }).then(() => {
+                        this.$notification.removeClass('error')
                     })
-                    .catch((e) => {
-                        this.$notification.addClass('error')
-                        this.$notification.html('<p>Ocorreu um erro, tente mais tarde</p>')
-                        this.$notification.slideToggle('slow')
-                        delay(3000).then(() => {
+                } else {
+                    db.ref('subscribers')
+                        .push(data)
+                        .then(() => {
+                            this.$notification.addClass('success')
+                            this.$notification.html('<p>Inscrição realizada com sucesso</p>')
                             this.$notification.slideToggle('slow')
-                        }).then(() => {
-                            this.$notification.removeClass('error')
+                            delay(3000).then(() => {
+                                this.$notification.slideToggle('slow')
+                            }).then(() => {
+                                this.$notification.removeClass('success')
+                            })
                         })
-                    })
+                        .catch((e) => {
+                            this.$notification.addClass('error')
+                            this.$notification.html('<p>Ocorreu um erro, tente mais tarde</p>')
+                            this.$notification.slideToggle('slow')
+                            delay(3000).then(() => {
+                                this.$notification.slideToggle('slow')
+                            }).then(() => {
+                                this.$notification.removeClass('error')
+                            })
+                        })
 
-
+                }
             }
         })
     }

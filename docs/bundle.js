@@ -25195,7 +25195,7 @@ var Firebase = function () {
         };
         this.$db = this.$firebase.database();
         this.$auth = this.$firebase.auth();
-
+        this.$palestras = [];
         this.bindEvents();
     }
 
@@ -25210,6 +25210,36 @@ var Firebase = function () {
                     console.log('i', value.key);
                     _this.$ul.append('<li>\n                                            <div class="palestra">\n                                                <input id="palestra-' + value.key + '" type="checkbox" value="' + value.val().palestra + '" />\n                                                <label for="palestra-' + value.key + '">' + value.val().palestra + '</span>\n                                            </div>\n                                    </li>');
                 });
+            }).then(function () {
+                var self = _this;
+                var palestras = document.querySelectorAll('.palestra');
+                palestras.forEach(function (value, index) {
+                    value.addEventListener('change', function () {
+                        if (this.children[0].checked == true) {
+                            self.$palestras.push(this.children[0].value);
+
+                            var html = '<span title="' + self.$palestras[self.$palestras.length - 1] + '">' + self.$palestras[self.$palestras.length - 1] + '</span>';
+                            (0, _jquery2.default)('.multiSel').append(html);
+                            console.log('checkado', self.$palestras);
+                            (0, _jquery2.default)('.hida').hide();
+                        } else {
+                            var _index = self.$palestras.indexOf(this.children[0].value);
+                            console.log(_index);
+                            if (_index > -1) {
+                                self.$palestras.splice(_index, 1);
+                            }
+                            var _html = '<span title="' + self.$palestras + '">' + self.$palestras + '</span>';
+                            // $(`span[title=${self.$palestras[index]}]`).remove()
+
+                            (0, _jquery2.default)('.multiSel').html(_html);
+                            if (self.$palestras.length < 1) {
+                                (0, _jquery2.default)('span[title]').remove();
+                                (0, _jquery2.default)('.hida').show();
+                            }
+                            console.log('descheckou', self.$palestras);
+                        }
+                    });
+                });
             });
 
             this.$subscriber.submit.on('click', function (e) {
@@ -25220,32 +25250,43 @@ var Firebase = function () {
                     lastname: subs.sobrenome.val(),
                     email: subs.email.val(),
                     tel: subs.telefone.val() || 'vazio',
+                    palestras: _this.$palestras,
                     created_at: new Date(Date.now()).toLocaleDateString("pt-BR") + " " + new Date(Date.now()).toLocaleTimeString("pt-BR")
                 };
 
                 if (data.name && data.lastname && data.email && data.email.indexOf('@') != -1) {
                     e.preventDefault();
                     var db = _this.$db;
-
-                    db.ref('subscribers').push(data).then(function () {
-                        _this.$notification.addClass('success');
-                        _this.$notification.html('<p>Inscrição realizada com sucesso</p>');
-                        _this.$notification.slideToggle('slow');
-                        (0, _helpers.delay)(3000).then(function () {
-                            _this.$notification.slideToggle('slow');
-                        }).then(function () {
-                            _this.$notification.removeClass('success');
-                        });
-                    }).catch(function (e) {
+                    if (data.palestras.length === 0) {
                         _this.$notification.addClass('error');
-                        _this.$notification.html('<p>Ocorreu um erro, tente mais tarde</p>');
+                        _this.$notification.html('<p>Preencha as palestras</p>');
                         _this.$notification.slideToggle('slow');
                         (0, _helpers.delay)(3000).then(function () {
                             _this.$notification.slideToggle('slow');
                         }).then(function () {
                             _this.$notification.removeClass('error');
                         });
-                    });
+                    } else {
+                        db.ref('subscribers').push(data).then(function () {
+                            _this.$notification.addClass('success');
+                            _this.$notification.html('<p>Inscrição realizada com sucesso</p>');
+                            _this.$notification.slideToggle('slow');
+                            (0, _helpers.delay)(3000).then(function () {
+                                _this.$notification.slideToggle('slow');
+                            }).then(function () {
+                                _this.$notification.removeClass('success');
+                            });
+                        }).catch(function (e) {
+                            _this.$notification.addClass('error');
+                            _this.$notification.html('<p>Ocorreu um erro, tente mais tarde</p>');
+                            _this.$notification.slideToggle('slow');
+                            (0, _helpers.delay)(3000).then(function () {
+                                _this.$notification.slideToggle('slow');
+                            }).then(function () {
+                                _this.$notification.removeClass('error');
+                            });
+                        });
+                    }
                 }
             });
         }
