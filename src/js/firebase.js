@@ -27,6 +27,7 @@ class Firebase {
     }
 
     bindEvents() {
+        
         this.$db
             .ref("palestra")
             .once("value")
@@ -40,6 +41,27 @@ class Firebase {
                                     </li>`)
                 })
 
+            }).then(() => {
+                // let labels = document.getElementsByClassName('palestra')
+
+                // console.log(labels.length)
+
+                // $('.mutliSelect label').on('click', function() {
+                //     console.log('porra')
+                //     var title = $(this).children[0].value,
+                //       title = $(this).val() + ",";
+                //     console.log(title)
+                //     if ($(this).is(':checked')) {
+                //       var html = '<span title="' + title + '">' + title + '</span>';
+                //       $('.multiSel').append(html);
+                //       $(".hida").hide();
+                //     } else {
+                //       $('span[title="' + title + '"]').remove();
+                //       var ret = $(".hida");
+                //       $('.dropdown dt a').append(ret);
+                  
+                //     }
+                //   });
             })
 
 

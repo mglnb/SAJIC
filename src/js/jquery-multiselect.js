@@ -40,6 +40,6 @@ $(".dropdown dt a").on('click', function() {
       });
   })
  
-  $('label.palestra').on('click', function() {
+  $('label').on('click', function() {
     console.log("teste")
 })
