@@ -750,6 +750,9 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
       @media screen and (max-width: 768px) {
         .mapa_section .modal.active .card {
           padding: 20px 10px; } }
+      @media screen and (max-width: 768px) {
+        .mapa_section .modal.active .card {
+          width: 100%; } }
       @media screen and (min-width: 769px) and (max-width: 1024px) {
         .mapa_section .modal.active .card {
           width: 100%; } }
