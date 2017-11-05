@@ -1,8 +1,12 @@
 import firebase from 'firebase'
 import $ from 'jquery'
 import {
-    delay
+    delay,
+    cpfValidator
 } from '../js/helpers'
+
+
+
 class Firebase {
     constructor() {
         this.$firebase = firebase.initializeApp({
@@ -20,6 +24,7 @@ class Firebase {
             nome: $('#nome'),
             sobrenome: $('#sobrenome'),
             email: $('#email'),
+            cpf: $('#cpf'),
             telefone: $('#telefone'),
             submit: $('#submit')
         }
@@ -27,6 +32,7 @@ class Firebase {
         this.$auth = this.$firebase.auth()
         this.$palestras = []
         this.bindEvents()
+
     }
 
     bindEvents() {
@@ -106,13 +112,21 @@ class Firebase {
                 lastname: subs.sobrenome.val(),
                 email: subs.email.val(),
                 tel: subs.telefone.val() || 'vazio',
+                cpf: subs.cpf.val().split('.').join('').split('-').join(''),
                 palestras: this.$palestras,
                 created_at: new Date(Date.now()).toLocaleDateString("pt-BR") + " " + new Date(Date.now()).toLocaleTimeString("pt-BR")
             }
 
-
-
-            if (data.name && data.lastname && data.email && data.email.indexOf('@') != -1) {
+            if (!cpfValidator(data.cpf)) {
+                this.$notification.addClass('error')
+                this.$notification.html('<p>CPF Inválido</p>')
+                this.$notification.slideToggle('slow')
+                delay(3000).then(() => {
+                    this.$notification.slideToggle('slow')
+                }).then(() => {
+                    this.$notification.removeClass('error')
+                })
+            } else if (data.name && data.lastname && data.email && data.email.indexOf('@') != -1) {
                 e.preventDefault()
                 let db = this.$db
                 if (data.palestras.length === 0) {
@@ -125,11 +139,11 @@ class Firebase {
                         this.$notification.removeClass('error')
                     })
                 } else {
-                    db.ref('subscribers')
-                        .push(data)
+                    db.ref(`subscribers/${data.cpf}`)
+                        .set(data)
                         .then((key) => {
                             data.palestras.forEach((value, index) => {
-                                db.ref(`palestra/${value}/subscribers/`).push(data)
+                                db.ref(`palestra/${value}/subscribers/${data.cpf}`).set(data)
                             })
                             this.$notification.addClass('success')
                             this.$notification.html('<p>Inscrição realizada com sucesso</p>')
@@ -141,15 +155,25 @@ class Firebase {
                             })
                         })
                         .catch((e) => {
-                            console.log(e)
-                            this.$notification.addClass('error')
-                            this.$notification.html('<p>Ocorreu um erro, tente mais tarde</p>')
-                            this.$notification.slideToggle('slow')
-                            delay(3000).then(() => {
+                            if (e.code == "PERMISSION_DENIED") {
+                                this.$notification.addClass('error')
+                                this.$notification.html('<p>Cadastro já incluido</p>')
                                 this.$notification.slideToggle('slow')
-                            }).then(() => {
-                                this.$notification.removeClass('error')
-                            })
+                                delay(3000).then(() => {
+                                    this.$notification.slideToggle('slow')
+                                }).then(() => {
+                                    this.$notification.removeClass('error')
+                                })
+                            } else {
+                                this.$notification.addClass('error')
+                                this.$notification.html('<p>Ocorreu um erro, tente mais tarde</p>')
+                                this.$notification.slideToggle('slow')
+                                delay(3000).then(() => {
+                                    this.$notification.slideToggle('slow')
+                                }).then(() => {
+                                    this.$notification.removeClass('error')
+                                })
+                            }
                         })
 
 

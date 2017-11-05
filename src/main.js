@@ -1,5 +1,6 @@
 require('jquery')
 require('./js/jquery-multiselect')
+require('./js/jquery.mask.min')
 require('./sass/main.scss')
 require('./js/FSS')
 require('./js/polygon-app')
