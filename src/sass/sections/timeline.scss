@@ -105,6 +105,11 @@
             @include mobile {
                 text-align: center;
             }
+            figcaption {
+                @include mobile {
+                    order: 1;
+                }
+            }
         }
         &__content {
             padding: 20px 70px;
@@ -116,6 +121,10 @@
             transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
             @include mobile {
                 padding: 20px 10px;
+            }
+            @include tablet {
+                padding: 20px 30px;
+                
             }
         }
         &__content .row {

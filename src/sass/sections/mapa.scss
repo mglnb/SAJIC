@@ -147,10 +147,13 @@
             text-align: left;
             background: #fff;
             padding: 30px 120px;
-            width: 100%;
             border: 1px solid #c4c6ca;
             @include mobile {
                 padding: 20px 10px;
+            }
+            @include tablet {
+                width: 100%;
+            
             }
             .title {
                 text-align: center;
