@@ -2,6 +2,8 @@ import {
     scrollIt
 } from './helpers';
 
+import $ from 'jquery';
+
 class Home {
     constructor() {
         this.$map = document.querySelectorAll("#map-svg [class^='fil']")
@@ -10,6 +12,7 @@ class Home {
         this.$btn_inscricao = document.getElementById("btn-inscricao")
         this.$modal_inscricao = document.getElementById("modal-inscricao");
         this.bindEvents();
+        this.applyMasks();
     }
 
     bindEvents() {
@@ -40,44 +43,13 @@ class Home {
 
         this.$btn_inscricao.addEventListener('click', () => {
             this.$modal_inscricao.classList.add('active')
-        })
+        });
 
+    }
 
-        // window.addEventListener('scroll', () => {
-        //     const targetSection = document.querySelector('.section-schedule');
-        //     const start = targetSection.offsetTop;
-        //     const end = start + targetSection.offsetHeight;
-
-        //     const changingPoint = window.scrollY + this.$hamburguer.offsetTop;
-
-        //     const targetSection2 = document.querySelector('.section-partners');
-        //     const start2 = targetSection2.offsetTop;
-        //     const end2 = start2 + targetSection2.offsetHeight;
-
-        //     if((changingPoint >= start && changingPoint <= end) || (changingPoint >= start2 && changingPoint <= end2)) 
-        //        return this.$hamburguer.classList.toggle('nav-dark', true);
-
-        //     this.$hamburguer.classList.remove('nav-dark');
-
-        // });
-
-        // this.$hamburguer.addEventListener('click', () => {
-        //     this.$menu.classList.toggle('active');
-        //     this.$menu.classList.toggle('inactive');
-        // });
-
-        // this.$btns.forEach((element, index, array) => {
-        //     element.addEventListener('click', (e) => {
-        //         e.preventDefault();
-        //         this.$menu.classList.toggle('active');
-        //         this.$menu.classList.toggle('inactive');
-        //         scrollIt(this.$sections[index]);
-        //     })
-        // });
-
-        // this.$scrollTopButton.addEventListener('click', () => {
-        //     scrollIt(this.$sections[0]);
-        // })
+    applyMasks() {
+        $('#cpf').mask('000.000.000-00');
+        $('#telefone').mask('(00) 00000-0000');
     }
 }
 

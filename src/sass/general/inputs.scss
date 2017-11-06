@@ -16,7 +16,6 @@ form {
                     left: 5px;
                     top: 5px;
                     border-radius: 3px;
-                    // border: 1px solid #dbdbdb;
                     background: #cecece;
                     transition: background .2s;
                     line-height: 16px;
@@ -44,7 +43,6 @@ form {
             margin: 10px 0;
             padding: 5px 10px;
             position: relative;
-            // border-radius: 30px!important;
     
             &+i {
                 position: absolute;
@@ -56,15 +54,6 @@ form {
                 color: $coral-blue;
                 background: $white;
 
-            }
-
-            &#sobrenome {
-                padding-left: 10px;
-                border-left: none;
-
-                @include mobile {
-                    border-left: 0.1rem solid #d1d1d1;
-                }
             }
         }
         
