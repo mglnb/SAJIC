@@ -44,8 +44,8 @@ class Firebase {
                 let palestras = snapshot
                 palestras.forEach((value, index) => {
                     palestraKey = value.key
-                    console.log('i', value.key)
-                    console.dir(value.val().subscribers)
+                    // console.log('i', value.key)
+                    // console.dir(value.val().subscribers)
                     if (Object.keys(value.val().subscribers).length >= value.val().numeroPessoas) {
                         this.$ul.append(`<li>
                                                 <div class="palestra">

@@ -1,9 +1,9 @@
-import {
-    scrollIt
-} from './helpers';
-
+import { scrollIt } from './helpers';
+import Map from './map';
 import $ from 'jquery';
 
+
+// console.log('google maps', Map);
 class Home {
     constructor() {
         this.$map = document.querySelectorAll("#map-svg [class^='fil']")
@@ -11,17 +11,21 @@ class Home {
         this.$closes = document.querySelectorAll(".close")
         this.$btn_inscricao = document.getElementById("btn-inscricao")
         this.$modal_inscricao = document.getElementById("modal-inscricao");
+        this.map = new Map('#eventMap');
         this.bindEvents();
         this.applyMasks();
+        this.initMap();
     }
 
     bindEvents() {
+
         this.$closes.forEach((value, index) => {
             value.addEventListener('click', function() {
                 console.log("clico")
                 value.offsetParent.offsetParent.classList.remove('active')
             })
         })
+
         this.$map.forEach((value, index) => {
             let self = value;
             if (value.id) {
@@ -48,9 +52,20 @@ class Home {
     }
 
     applyMasks() {
+        
         $('#cpf').mask('000.000.000-00');
         $('#telefone').mask('(00) 00000-0000');
     }
+
+    initMap() {
+        
+        this.map
+            .fetchLocation('Faculdade de Tecnologia Senac Pelotas')
+            .then(location => {
+                this.map.init();
+            });
+    }
+
 }
 
 export default new Home();
