@@ -32,6 +32,7 @@
   "dependencies": {
     "babel-plugin-transform-remove-strict-mode": "0.0.2",
     "firebase": "^4.6.1",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "jquery-mask-plugin": "^1.14.12"
   }
 }

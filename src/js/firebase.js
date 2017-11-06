@@ -79,12 +79,12 @@ class Firebase {
 
                             let html = `<span title="${arrayPalestras[arrayPalestras.length -1 ]}">${arrayPalestras[arrayPalestras.length -1 ]}</span>`
                             $('.multiSel').append(html)
-                            console.log('checkado', self.$palestras)
+                            // console.log('checkado', self.$palestras)
                             $('.hida').hide();
                         } else {
                             let index = self.$palestras.indexOf(key)
                             let indexArray = arrayPalestras.indexOf(arrayPalestras[arrayPalestras.length - 1])
-                            console.log(index)
+                            // console.log(index)
                             if (index > -1) {
                                 self.$palestras.splice(index, 1);
                                 arrayPalestras.splice(indexArray, 1)
@@ -97,7 +97,7 @@ class Firebase {
                                 $('span[title]').remove()
                                 $('.hida').show();
                             }
-                            console.log('descheckou', self.$palestras)
+                            // console.log('descheckou', self.$palestras)
                         }
                     })
                 })
@@ -112,7 +112,7 @@ class Firebase {
                 lastname: subs.sobrenome.val(),
                 email: subs.email.val(),
                 tel: subs.telefone.val() || 'vazio',
-                cpf: subs.cpf.val().split('.').join('').split('-').join(''),
+                cpf: subs.cpf.val().replace(/\.|-/g, ''),
                 palestras: this.$palestras,
                 created_at: new Date(Date.now()).toLocaleDateString("pt-BR") + " " + new Date(Date.now()).toLocaleTimeString("pt-BR")
             }
