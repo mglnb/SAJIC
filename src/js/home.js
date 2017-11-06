@@ -2,8 +2,6 @@ import { scrollIt } from './helpers';
 import Map from './maps/map';
 import $ from 'jquery';
 
-
-// console.log('google maps', Map);
 class Home {
     constructor() {
         this.$map = document.querySelectorAll("#map-svg [class^='fil']")
@@ -61,7 +59,7 @@ class Home {
         
         this.map
             .fetchLocation('Faculdade de Tecnologia Senac Pelotas')
-            .then(location => {
+            .then(() => {
                 this.map.init();
             });
     }
