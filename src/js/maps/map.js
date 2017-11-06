@@ -1,17 +1,21 @@
 import maps from 'google-maps';
 import geocoder from 'google-geocoder';
+import { styles } from './map-styles';
+
+const apiKey = 'AIzaSyC8Cgnl7akhQo_bIL9fBByOcyHrGgA35uk';
 
 const geo = geocoder({
-    key: 'AIzaSyC8Cgnl7akhQo_bIL9fBByOcyHrGgA35uk'
+    key: apiKey
 });
 
-maps.KEY = 'AIzaSyC8Cgnl7akhQo_bIL9fBByOcyHrGgA35uk';
+maps.KEY = apiKey;
 
 class Map {
     constructor(el, coords) {
         this.el = document.querySelector(el);
         this.options = {
-            zoom: 18
+            zoom: 18,
+            styles
         };
     }
 

@@ -1,5 +1,5 @@
 import { scrollIt } from './helpers';
-import Map from './map';
+import Map from './maps/map';
 import $ from 'jquery';
 
 
