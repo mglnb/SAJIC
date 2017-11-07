@@ -7,3 +7,4 @@ require('./js/polygon-app')
 require('./js/home');
 require('./img/icon_sajic.jpg')
 require('./js/firebase') 
+require('./img/marker.png')

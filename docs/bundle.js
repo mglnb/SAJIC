@@ -24408,6 +24408,7 @@ __webpack_require__(86);
 __webpack_require__(87);
 __webpack_require__(97);
 __webpack_require__(98);
+__webpack_require__(193);
 
 /***/ }),
 /* 82 */
@@ -25383,7 +25384,7 @@ var Map = function () {
 
         this.el = document.querySelector(el);
         this.options = {
-            zoom: 18,
+            zoom: 17,
             styles: _mapStyles.styles
         };
     }
@@ -25394,14 +25395,29 @@ var Map = function () {
             var _this = this;
 
             _googleMaps2.default.load(function (google) {
+                var image = {
+                    url: './img/marker.png',
+                    // This marker is 20 pixels wide by 32 pixels high.
+                    size: new google.maps.Size(128, 128),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(65, 140)
+                };
 
+                var contentString = '\n            <div class="logo">\n            <img src="./img/logo_senac.png">\n        </div>\n        \n        <div class="flex">\n            <div class="btn">\n                <a href="#">\n                    <div class="icon">\n                        <img src="http://fogosglobo.com.br/img/250x250-circle.png" alt="">\n                    </div>\n                    <div class="info">\n                        (53) 3225-6918\n                    </div>\n                </a>\n            </div>\n            <div class="btn">\n                <a href="#">\n                    <div class="icon">\n                        <img src="http://fogosglobo.com.br/img/250x250-circle.png" alt="">\n                    </div>\n                    <div class="info">\n                        Rua Gon\xE7alves Chaves, 602, Centro, Pelotas\n                    </div>\n                </a>\n            </div>\n            <div class="btn">\n                <a href="#">\n                    <div class="icon">\n                        <img src="http://fogosglobo.com.br/img/250x250-circle.png" alt="">\n                    </div>\n                    <div class="info">\n                        Facebook\n                    </div>\n                </a>\n            </div>\n            <div class="btn">\n                <a href="#">\n                    <div class="icon">\n                        <img src="http://fogosglobo.com.br/img/250x250-circle.png" alt="">\n                    </div>\n                    <div class="info">\n                        Conhe\xE7a a Faculdade\n                    </div>\n                </a>\n            </div>\n        </div>\n              \n              ';
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
                 var map = new google.maps.Map(_this.el, _this.options);
                 var marker = new google.maps.Marker({
                     position: _this.options.center,
                     title: 'Faculdade de Tecnologia SENAC',
+                    animation: google.maps.Animation.DROP,
+                    icon: image,
                     map: map
                 });
-
+                marker.addListener('click', function () {
+                    infowindow.open(map, marker);
+                });
                 return map;
             });
         }
@@ -28451,106 +28467,177 @@ Object.defineProperty(exports, "__esModule", {
 var styles = exports.styles = [{
   "elementType": "geometry",
   "stylers": [{
-    "color": "#f5f5f5"
-  }]
-}, {
-  "elementType": "labels.icon",
-  "stylers": [{
-    "visibility": "on"
+    "color": "#1d2c4d"
   }]
 }, {
   "elementType": "labels.text.fill",
   "stylers": [{
-    "color": "#616161"
+    "color": "#8ec3b9"
   }]
 }, {
   "elementType": "labels.text.stroke",
   "stylers": [{
-    "color": "#f5f5f5"
+    "color": "#1a3646"
+  }]
+}, {
+  "featureType": "administrative.country",
+  "elementType": "geometry.stroke",
+  "stylers": [{
+    "color": "#4b6878"
   }]
 }, {
   "featureType": "administrative.land_parcel",
   "elementType": "labels.text.fill",
   "stylers": [{
-    "color": "#bdbdbd"
+    "color": "#64779e"
+  }]
+}, {
+  "featureType": "administrative.province",
+  "elementType": "geometry.stroke",
+  "stylers": [{
+    "color": "#4b6878"
+  }]
+}, {
+  "featureType": "landscape.man_made",
+  "elementType": "geometry.stroke",
+  "stylers": [{
+    "color": "#334e87"
+  }]
+}, {
+  "featureType": "landscape.natural",
+  "elementType": "geometry",
+  "stylers": [{
+    "color": "#023e58"
   }]
 }, {
   "featureType": "poi",
   "elementType": "geometry",
   "stylers": [{
-    "color": "#eeeeee"
+    "color": "#283d6a"
+  }]
+}, {
+  "featureType": "poi",
+  "elementType": "labels.text",
+  "stylers": [{
+    "visibility": "off"
   }]
 }, {
   "featureType": "poi",
   "elementType": "labels.text.fill",
   "stylers": [{
-    "color": "#757575"
+    "color": "#6f9ba5"
+  }]
+}, {
+  "featureType": "poi",
+  "elementType": "labels.text.stroke",
+  "stylers": [{
+    "color": "#1d2c4d"
+  }]
+}, {
+  "featureType": "poi.business",
+  "stylers": [{
+    "visibility": "off"
   }]
 }, {
   "featureType": "poi.park",
-  "elementType": "geometry",
+  "elementType": "geometry.fill",
   "stylers": [{
-    "color": "#e5e5e5"
+    "color": "#023e58"
   }]
 }, {
   "featureType": "poi.park",
   "elementType": "labels.text.fill",
   "stylers": [{
-    "color": "#9e9e9e"
+    "color": "#3C7680"
   }]
 }, {
   "featureType": "road",
   "elementType": "geometry",
   "stylers": [{
-    "color": "#ffffff"
+    "color": "#304a7d"
   }]
 }, {
-  "featureType": "road.arterial",
+  "featureType": "road",
+  "elementType": "labels.icon",
+  "stylers": [{
+    "visibility": "off"
+  }]
+}, {
+  "featureType": "road",
   "elementType": "labels.text.fill",
   "stylers": [{
-    "color": "#757575"
+    "color": "#98a5be"
+  }]
+}, {
+  "featureType": "road",
+  "elementType": "labels.text.stroke",
+  "stylers": [{
+    "color": "#1d2c4d"
   }]
 }, {
   "featureType": "road.highway",
   "elementType": "geometry",
   "stylers": [{
-    "color": "#dadada"
+    "color": "#2c6675"
+  }]
+}, {
+  "featureType": "road.highway",
+  "elementType": "geometry.stroke",
+  "stylers": [{
+    "color": "#255763"
   }]
 }, {
   "featureType": "road.highway",
   "elementType": "labels.text.fill",
   "stylers": [{
-    "color": "#616161"
+    "color": "#b0d5ce"
   }]
 }, {
-  "featureType": "road.local",
+  "featureType": "road.highway",
+  "elementType": "labels.text.stroke",
+  "stylers": [{
+    "color": "#023e58"
+  }]
+}, {
+  "featureType": "transit",
+  "stylers": [{
+    "visibility": "off"
+  }]
+}, {
+  "featureType": "transit",
   "elementType": "labels.text.fill",
   "stylers": [{
-    "color": "#9e9e9e"
+    "color": "#98a5be"
+  }]
+}, {
+  "featureType": "transit",
+  "elementType": "labels.text.stroke",
+  "stylers": [{
+    "color": "#1d2c4d"
   }]
 }, {
   "featureType": "transit.line",
-  "elementType": "geometry",
+  "elementType": "geometry.fill",
   "stylers": [{
-    "color": "#e5e5e5"
+    "color": "#283d6a"
   }]
 }, {
   "featureType": "transit.station",
   "elementType": "geometry",
   "stylers": [{
-    "color": "#eeeeee"
+    "color": "#3a4762"
   }]
 }, {
   "featureType": "water",
   "elementType": "geometry",
   "stylers": [{
-    "color": "#c9c9c9"
+    "color": "#0e1626"
   }]
 }, {
   "featureType": "water",
   "elementType": "labels.text.fill",
   "stylers": [{
-    "color": "#9e9e9e"
+    "color": "#4e6d70"
   }]
 }];
 
@@ -40892,6 +40979,24 @@ function stop(id) {
 
 //# sourceMappingURL=backoff.js.map
 
+
+/***/ }),
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/marker.png";
 
 /***/ })
 /******/ ]);
