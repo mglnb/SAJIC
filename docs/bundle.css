@@ -433,6 +433,662 @@ form .dropdown + i {
   form .dropdown + i.open {
     transform: translateY(-50%) rotate(180deg); }
 
+/*
+Linearicons Free v1.0.0 - https://linearicons.com/free
+By Perxis - https://perxis.com
+(c) 2014-2015 Perxis.com
+License: https://linearicons.com/free/license
+*/
+@font-face {
+  font-family: Linearicons-Free;
+  src: url(https://cdn.linearicons.com/free/1.0.0/Linearicons-Free.eot);
+  src: url(https://cdn.linearicons.com/free/1.0.0/Linearicons-Free.eot?#iefix) format("embedded-opentype"), url(https://cdn.linearicons.com/free/1.0.0/Linearicons-Free.woff2) format("woff2"), url(https://cdn.linearicons.com/free/1.0.0/Linearicons-Free.ttf) format("truetype"), url(https://cdn.linearicons.com/free/1.0.0/Linearicons-Free.woff) format("woff"), url(https://cdn.linearicons.com/free/1.0.0/Linearicons-Free.svg#Linearicons-Free) format("svg");
+  font-weight: 400;
+  font-style: normal; }
+
+.lnr {
+  font-family: Linearicons-Free;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.lnr-home:before {
+  content: "\E800"; }
+
+.lnr-apartment:before {
+  content: "\E801"; }
+
+.lnr-pencil:before {
+  content: "\E802"; }
+
+.lnr-magic-wand:before {
+  content: "\E803"; }
+
+.lnr-drop:before {
+  content: "\E804"; }
+
+.lnr-lighter:before {
+  content: "\E805"; }
+
+.lnr-poop:before {
+  content: "\E806"; }
+
+.lnr-sun:before {
+  content: "\E807"; }
+
+.lnr-moon:before {
+  content: "\E808"; }
+
+.lnr-cloud:before {
+  content: "\E809"; }
+
+.lnr-cloud-upload:before {
+  content: "\E80A"; }
+
+.lnr-cloud-download:before {
+  content: "\E80B"; }
+
+.lnr-cloud-sync:before {
+  content: "\E80C"; }
+
+.lnr-cloud-check:before {
+  content: "\E80D"; }
+
+.lnr-database:before {
+  content: "\E80E"; }
+
+.lnr-lock:before {
+  content: "\E80F"; }
+
+.lnr-cog:before {
+  content: "\E810"; }
+
+.lnr-trash:before {
+  content: "\E811"; }
+
+.lnr-dice:before {
+  content: "\E812"; }
+
+.lnr-heart:before {
+  content: "\E813"; }
+
+.lnr-star:before {
+  content: "\E814"; }
+
+.lnr-star-half:before {
+  content: "\E815"; }
+
+.lnr-star-empty:before {
+  content: "\E816"; }
+
+.lnr-flag:before {
+  content: "\E817"; }
+
+.lnr-envelope:before {
+  content: "\E818"; }
+
+.lnr-paperclip:before {
+  content: "\E819"; }
+
+.lnr-inbox:before {
+  content: "\E81A"; }
+
+.lnr-eye:before {
+  content: "\E81B"; }
+
+.lnr-printer:before {
+  content: "\E81C"; }
+
+.lnr-file-empty:before {
+  content: "\E81D"; }
+
+.lnr-file-add:before {
+  content: "\E81E"; }
+
+.lnr-enter:before {
+  content: "\E81F"; }
+
+.lnr-exit:before {
+  content: "\E820"; }
+
+.lnr-graduation-hat:before {
+  content: "\E821"; }
+
+.lnr-license:before {
+  content: "\E822"; }
+
+.lnr-music-note:before {
+  content: "\E823"; }
+
+.lnr-film-play:before {
+  content: "\E824"; }
+
+.lnr-camera-video:before {
+  content: "\E825"; }
+
+.lnr-camera:before {
+  content: "\E826"; }
+
+.lnr-picture:before {
+  content: "\E827"; }
+
+.lnr-book:before {
+  content: "\E828"; }
+
+.lnr-bookmark:before {
+  content: "\E829"; }
+
+.lnr-user:before {
+  content: "\E82A"; }
+
+.lnr-users:before {
+  content: "\E82B"; }
+
+.lnr-shirt:before {
+  content: "\E82C"; }
+
+.lnr-store:before {
+  content: "\E82D"; }
+
+.lnr-cart:before {
+  content: "\E82E"; }
+
+.lnr-tag:before {
+  content: "\E82F"; }
+
+.lnr-phone-handset:before {
+  content: "\E830"; }
+
+.lnr-phone:before {
+  content: "\E831"; }
+
+.lnr-pushpin:before {
+  content: "\E832"; }
+
+.lnr-map-marker:before {
+  content: "\E833"; }
+
+.lnr-map:before {
+  content: "\E834"; }
+
+.lnr-location:before {
+  content: "\E835"; }
+
+.lnr-calendar-full:before {
+  content: "\E836"; }
+
+.lnr-keyboard:before {
+  content: "\E837"; }
+
+.lnr-spell-check:before {
+  content: "\E838"; }
+
+.lnr-screen:before {
+  content: "\E839"; }
+
+.lnr-smartphone:before {
+  content: "\E83A"; }
+
+.lnr-tablet:before {
+  content: "\E83B"; }
+
+.lnr-laptop:before {
+  content: "\E83C"; }
+
+.lnr-laptop-phone:before {
+  content: "\E83D"; }
+
+.lnr-power-switch:before {
+  content: "\E83E"; }
+
+.lnr-bubble:before {
+  content: "\E83F"; }
+
+.lnr-heart-pulse:before {
+  content: "\E840"; }
+
+.lnr-construction:before {
+  content: "\E841"; }
+
+.lnr-pie-chart:before {
+  content: "\E842"; }
+
+.lnr-chart-bars:before {
+  content: "\E843"; }
+
+.lnr-gift:before {
+  content: "\E844"; }
+
+.lnr-diamond:before {
+  content: "\E845"; }
+
+.lnr-linearicons:before {
+  content: "\E846"; }
+
+.lnr-dinner:before {
+  content: "\E847"; }
+
+.lnr-coffee-cup:before {
+  content: "\E848"; }
+
+.lnr-leaf:before {
+  content: "\E849"; }
+
+.lnr-paw:before {
+  content: "\E84A"; }
+
+.lnr-rocket:before {
+  content: "\E84B"; }
+
+.lnr-briefcase:before {
+  content: "\E84C"; }
+
+.lnr-bus:before {
+  content: "\E84D"; }
+
+.lnr-car:before {
+  content: "\E84E"; }
+
+.lnr-train:before {
+  content: "\E84F"; }
+
+.lnr-bicycle:before {
+  content: "\E850"; }
+
+.lnr-wheelchair:before {
+  content: "\E851"; }
+
+.lnr-select:before {
+  content: "\E852"; }
+
+.lnr-earth:before {
+  content: "\E853"; }
+
+.lnr-smile:before {
+  content: "\E854"; }
+
+.lnr-sad:before {
+  content: "\E855"; }
+
+.lnr-neutral:before {
+  content: "\E856"; }
+
+.lnr-mustache:before {
+  content: "\E857"; }
+
+.lnr-alarm:before {
+  content: "\E858"; }
+
+.lnr-bullhorn:before {
+  content: "\E859"; }
+
+.lnr-volume-high:before {
+  content: "\E85A"; }
+
+.lnr-volume-medium:before {
+  content: "\E85B"; }
+
+.lnr-volume-low:before {
+  content: "\E85C"; }
+
+.lnr-volume:before {
+  content: "\E85D"; }
+
+.lnr-mic:before {
+  content: "\E85E"; }
+
+.lnr-hourglass:before {
+  content: "\E85F"; }
+
+.lnr-undo:before {
+  content: "\E860"; }
+
+.lnr-redo:before {
+  content: "\E861"; }
+
+.lnr-sync:before {
+  content: "\E862"; }
+
+.lnr-history:before {
+  content: "\E863"; }
+
+.lnr-clock:before {
+  content: "\E864"; }
+
+.lnr-download:before {
+  content: "\E865"; }
+
+.lnr-upload:before {
+  content: "\E866"; }
+
+.lnr-enter-down:before {
+  content: "\E867"; }
+
+.lnr-exit-up:before {
+  content: "\E868"; }
+
+.lnr-bug:before {
+  content: "\E869"; }
+
+.lnr-code:before {
+  content: "\E86A"; }
+
+.lnr-link:before {
+  content: "\E86B"; }
+
+.lnr-unlink:before {
+  content: "\E86C"; }
+
+.lnr-thumbs-up:before {
+  content: "\E86D"; }
+
+.lnr-thumbs-down:before {
+  content: "\E86E"; }
+
+.lnr-magnifier:before {
+  content: "\E86F"; }
+
+.lnr-cross:before {
+  content: "\E870"; }
+
+.lnr-menu:before {
+  content: "\E871"; }
+
+.lnr-list:before {
+  content: "\E872"; }
+
+.lnr-chevron-up:before {
+  content: "\E873"; }
+
+.lnr-chevron-down:before {
+  content: "\E874"; }
+
+.lnr-chevron-left:before {
+  content: "\E875"; }
+
+.lnr-chevron-right:before {
+  content: "\E876"; }
+
+.lnr-arrow-up:before {
+  content: "\E877"; }
+
+.lnr-arrow-down:before {
+  content: "\E878"; }
+
+.lnr-arrow-left:before {
+  content: "\E879"; }
+
+.lnr-arrow-right:before {
+  content: "\E87A"; }
+
+.lnr-move:before {
+  content: "\E87B"; }
+
+.lnr-warning:before {
+  content: "\E87C"; }
+
+.lnr-question-circle:before {
+  content: "\E87D"; }
+
+.lnr-menu-circle:before {
+  content: "\E87E"; }
+
+.lnr-checkmark-circle:before {
+  content: "\E87F"; }
+
+.lnr-cross-circle:before {
+  content: "\E880"; }
+
+.lnr-plus-circle:before {
+  content: "\E881"; }
+
+.lnr-circle-minus:before {
+  content: "\E882"; }
+
+.lnr-arrow-up-circle:before {
+  content: "\E883"; }
+
+.lnr-arrow-down-circle:before {
+  content: "\E884"; }
+
+.lnr-arrow-left-circle:before {
+  content: "\E885"; }
+
+.lnr-arrow-right-circle:before {
+  content: "\E886"; }
+
+.lnr-chevron-up-circle:before {
+  content: "\E887"; }
+
+.lnr-chevron-down-circle:before {
+  content: "\E888"; }
+
+.lnr-chevron-left-circle:before {
+  content: "\E889"; }
+
+.lnr-chevron-right-circle:before {
+  content: "\E88A"; }
+
+.lnr-crop:before {
+  content: "\E88B"; }
+
+.lnr-frame-expand:before {
+  content: "\E88C"; }
+
+.lnr-frame-contract:before {
+  content: "\E88D"; }
+
+.lnr-layers:before {
+  content: "\E88E"; }
+
+.lnr-funnel:before {
+  content: "\E88F"; }
+
+.lnr-text-format:before {
+  content: "\E890"; }
+
+.lnr-text-format-remove:before {
+  content: "\E891"; }
+
+.lnr-text-size:before {
+  content: "\E892"; }
+
+.lnr-bold:before {
+  content: "\E893"; }
+
+.lnr-italic:before {
+  content: "\E894"; }
+
+.lnr-underline:before {
+  content: "\E895"; }
+
+.lnr-strikethrough:before {
+  content: "\E896"; }
+
+.lnr-highlight:before {
+  content: "\E897"; }
+
+.lnr-text-align-left:before {
+  content: "\E898"; }
+
+.lnr-text-align-center:before {
+  content: "\E899"; }
+
+.lnr-text-align-right:before {
+  content: "\E89A"; }
+
+.lnr-text-align-justify:before {
+  content: "\E89B"; }
+
+.lnr-line-spacing:before {
+  content: "\E89C"; }
+
+.lnr-indent-increase:before {
+  content: "\E89D"; }
+
+.lnr-indent-decrease:before {
+  content: "\E89E"; }
+
+.lnr-pilcrow:before {
+  content: "\E89F"; }
+
+.lnr-direction-ltr:before {
+  content: "\E8A0"; }
+
+.lnr-direction-rtl:before {
+  content: "\E8A1"; }
+
+.lnr-page-break:before {
+  content: "\E8A2"; }
+
+.lnr-sort-alpha-asc:before {
+  content: "\E8A3"; }
+
+.lnr-sort-amount-asc:before {
+  content: "\E8A4"; }
+
+.lnr-hand:before {
+  content: "\E8A5"; }
+
+.lnr-pointer-up:before {
+  content: "\E8A6"; }
+
+.lnr-pointer-right:before {
+  content: "\E8A7"; }
+
+.lnr-pointer-down:before {
+  content: "\E8A8"; }
+
+.lnr-pointer-left:before {
+  content: "\E8A9"; }
+
+#loading-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+  visibility: visible; }
+  #loading-wrapper.deactive {
+    opacity: 0;
+    visibility: hidden; }
+
+#loading-text {
+  display: block;
+  color: #999;
+  position: absolute;
+  text-align: center;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 20px; }
+
+#loading-content {
+  display: block;
+  position: relative;
+  width: 230px;
+  height: 230px;
+  border: 3px solid #F00; }
+
+#loading-content:after {
+  content: "";
+  position: absolute;
+  border: 3px solid #0F0;
+  left: 15px;
+  right: 15px;
+  top: 15px;
+  bottom: 15px; }
+
+#loading-content:before {
+  content: "";
+  position: absolute;
+  border: 3px solid #00F;
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  bottom: 5px; }
+
+#loading-content {
+  border: 3px solid transparent;
+  border-top-color: #4B6CB7;
+  border-bottom-color: #4B6CB7;
+  border-radius: 50%;
+  -webkit-animation: loader 2s linear infinite;
+  -moz-animation: loader 2s linear infinite;
+  -o-animation: loader 2s linear infinite;
+  animation: loader 2s linear infinite; }
+
+#loading-content:before {
+  border: 3px solid transparent;
+  border-top-color: #FFF;
+  border-bottom-color: #FFF;
+  border-radius: 50%;
+  -webkit-animation: loader 3s linear infinite;
+  -moz-animation: loader 2s linear infinite;
+  -o-animation: loader 2s linear infinite;
+  animation: loader 3s linear infinite; }
+
+#loading-content:after {
+  border: 3px solid transparent;
+  border-top-color: #FDA609;
+  border-bottom-color: #FDA609;
+  border-radius: 50%;
+  -webkit-animation: loader 1.5s linear infinite;
+  animation: loader 1.5s linear infinite;
+  -moz-animation: loader 2s linear infinite;
+  -o-animation: loader 2s linear infinite; }
+
+@-webkit-keyframes loaders {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+#content-wrapper {
+  color: #FFF;
+  position: fixed;
+  left: 0;
+  top: 20px;
+  width: 100%;
+  height: 100%; }
+
+#header {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  height: 100px;
+  background-color: #666; }
+
+#content {
+  width: 800px;
+  height: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #888; }
+
 .hero_section {
   background-image: url(img/bg.jpg);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -462,6 +1118,34 @@ form .dropdown + i {
   justify-content: center; }
   .content svg {
     max-height: 80vh; }
+  .content.animate .fil1,
+  .content.animate .fil2,
+  .content.animate .fil5 {
+    animation: fil1 2s forwards; }
+  .content.animate .fil0 {
+    animation: opacity 1s forwards; }
+  .content.animate #_1843036923856 {
+    animation: segunda-edicao 4s forwards;
+    animation-delay: .7s; }
+
+.fil1,
+.fil2,
+.fil5 {
+  fill: transparent;
+  stroke-width: 60px;
+  stroke: #Fff;
+  stroke-dashoffset: 18616;
+  stroke-dasharray: 18616;
+  z-index: 2000; }
+
+.fil0 {
+  fill: #fff;
+  opacity: 0; }
+
+#_1843036923856 {
+  fill: #fff;
+  transform: translateX(200%);
+  opacity: 0; }
 
 .fil6 {
   fill: #fff; }
@@ -494,29 +1178,6 @@ form .dropdown + i {
   font-weight: bold;
   font-size: 882.656px;
   font-family: 'Myriad Pro'; }
-
-.fil1,
-.fil2,
-.fil5 {
-  animation: fil1 2s forwards;
-  fill: transparent;
-  stroke-width: 60px;
-  stroke: #Fff;
-  stroke-dashoffset: 18616;
-  stroke-dasharray: 18616;
-  z-index: 2000; }
-
-.fil0 {
-  fill: #fff;
-  opacity: 0;
-  animation: opacity 1s forwards; }
-
-#_1843036923856 {
-  fill: #fff;
-  transform: translateX(200%);
-  opacity: 0;
-  animation: segunda-edicao 4s forwards;
-  animation-delay: .7s; }
 
 .timeline_section {
   padding: 100px 0; }
@@ -930,21 +1591,27 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
 
 .map-info {
   height: auto; }
+  .map-info .lnr-graduation-hat, .map-info .lnr-phone, .map-info .lnr-map {
+    color: #004587;
+    font-size: 25px;
+    font-weight: 100;
+    border: 1px solid #004587;
+    padding: 10px;
+    border-radius: 50%; }
   .map-info .logo {
     text-align: center;
     margin-bottom: 40px; }
     .map-info .logo img {
-      width: 80%; }
-  .map-info img {
-    width: 100px; }
+      width: 70%; }
   .map-info a {
+    color: #004587;
     font-size: 14px; }
   .map-info .btn {
     flex: 1;
     line-height: 20px;
     font-family: "Raleway", Helvetica, sans-serif; }
     .map-info .btn .info {
-      margin-top: 10px; }
+      margin-top: 15px; }
 
 footer {
   padding: 20px 50px; }

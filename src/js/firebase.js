@@ -66,7 +66,7 @@ class Firebase {
                     // Timeline JS
 
 
-                    console.warn(contador)    
+                    // console.warn(contador)    
                     let timelineTemplate = contador % 2 == 0 
                     ? `<li class="entry entry--left">
                       <div class="entry__content">
@@ -102,18 +102,13 @@ class Firebase {
                       </li>`
                     contador++           
                     let date = value.val().dia
-                    console.log(new Date(value.val().dia.substring(0,10)))                    
+                    // console.log(new Date(value.val().dia.substring(0,10)))                    
 
                     if(date.includes('22-11-2017')) {
-                        console.log(1)
                         $('.timeline--first').append(timelineTemplate)
                     } else if (date.includes('23-11-2017')) {
-                        console.log(2)
-                        
                         $('.timeline--second').append(timelineTemplate)
                     } else if(date.includes('24-11-2017')){
-                        console.log(3)
-                        
                         $('.timeline--last').append(timelineTemplate)
                     }
 

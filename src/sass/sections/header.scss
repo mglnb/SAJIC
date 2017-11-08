@@ -32,9 +32,44 @@
   svg {
     max-height: 80vh;
   }
+  &.animate {
+    .fil1,
+    .fil2,
+    .fil5 {
+      animation: fil1 2s forwards;
+
+    }
+    .fil0 {
+      animation: opacity 1s forwards;
+    }
+    #_1843036923856 {
+      animation: segunda-edicao 4s forwards;
+      animation-delay: .7s;
+    }
+  }
 }
+.fil1,
+.fil2,
+.fil5 {
 
+  fill: transparent;
+  stroke-width: 60px;
+  stroke: #Fff;
+  stroke-dashoffset: 18616;
+  stroke-dasharray: 18616;
+  z-index: 2000;
+}
+.fil0 {
+  fill: #fff;
+  opacity: 0;
 
+}
+#_1843036923856 {
+  fill: #fff;
+  transform: translateX(200%);
+  opacity: 0;
+ 
+}
 .fil6 {
   fill: #fff;
 }
@@ -73,30 +108,4 @@
   font-weight: bold;
   font-size: 882.656px;
   font-family: 'Myriad Pro'
-}
-
-.fil1,
-.fil2,
-.fil5 {
-  animation: fil1 2s forwards;
-  fill: transparent;
-  stroke-width: 60px;
-  stroke: #Fff;
-  stroke-dashoffset: 18616;
-  stroke-dasharray: 18616;
-  z-index: 2000;
-}
-
-.fil0 {
-  fill: #fff;
-  opacity: 0;
-  animation: opacity 1s forwards;
-}
-
-#_1843036923856 {
-  fill: #fff;
-  transform: translateX(200%);
-  opacity: 0;
-  animation: segunda-edicao 4s forwards;
-  animation-delay: .7s;
 }

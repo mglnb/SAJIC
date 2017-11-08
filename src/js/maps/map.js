@@ -43,7 +43,7 @@ class Map {
             <div class="btn">
                 <a href="#">
                     <div class="icon">
-                        <img src="http://fogosglobo.com.br/img/250x250-circle.png" alt="">
+                        <span class="lnr lnr-phone"></span>
                     </div>
                     <div class="info">
                         (53) 3225-6918
@@ -53,7 +53,7 @@ class Map {
             <div class="btn">
                 <a href="#">
                     <div class="icon">
-                        <img src="http://fogosglobo.com.br/img/250x250-circle.png" alt="">
+                    <span class="lnr lnr-map"></span>                    
                     </div>
                     <div class="info">
                         Rua Gonçalves Chaves, 602, Centro, Pelotas
@@ -63,17 +63,8 @@ class Map {
             <div class="btn">
                 <a href="#">
                     <div class="icon">
-                        <img src="http://fogosglobo.com.br/img/250x250-circle.png" alt="">
-                    </div>
-                    <div class="info">
-                        Facebook
-                    </div>
-                </a>
-            </div>
-            <div class="btn">
-                <a href="#">
-                    <div class="icon">
-                        <img src="http://fogosglobo.com.br/img/250x250-circle.png" alt="">
+                    <span class="lnr lnr-graduation-hat"></span>                    
+                    
                     </div>
                     <div class="info">
                         Conheça a Faculdade
@@ -84,12 +75,7 @@ class Map {
         <br>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+
         </div>
     
               `

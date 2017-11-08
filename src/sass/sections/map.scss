@@ -4,18 +4,25 @@
 }
 
 .map-info {
+    .lnr-graduation-hat, .lnr-phone, .lnr-map {
+        color: #004587;
+        font-size: 25px;
+        font-weight: 100;
+        border: 1px solid #004587;
+        padding: 10px;
+        border-radius: 50%;
+
+      }
     .logo {
         text-align: center;
         img {
-            width: 80%;
+            width: 70%;
         }
         margin-bottom: 40px;
     }
-    img {
-        width: 100px;
-    }
     height: auto;
     a {
+        color: #004587;
         font-size: 14px;
     }
     .btn {
@@ -23,7 +30,7 @@
         line-height: 20px;
         font-family: "Raleway", Helvetica, sans-serif;
         .info {
-            margin-top: 10px;
+            margin-top: 15px;
         }
     }
 }
