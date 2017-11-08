@@ -926,6 +926,24 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
   width: 100%;
   height: 600px; }
 
+.map-info {
+  height: auto; }
+  .map-info .logo {
+    text-align: center;
+    margin-bottom: 40px; }
+    .map-info .logo img {
+      width: 80%; }
+  .map-info img {
+    width: 100px; }
+  .map-info a {
+    font-size: 14px; }
+  .map-info .btn {
+    flex: 1;
+    line-height: 20px;
+    font-family: "Raleway", Helvetica, sans-serif; }
+    .map-info .btn .info {
+      margin-top: 10px; }
+
 footer {
   padding: 20px 50px; }
   @media screen and (max-width: 768px) {

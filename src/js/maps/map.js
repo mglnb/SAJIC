@@ -33,9 +33,11 @@ class Map {
             };
 
             let contentString = `
+
+            <div class=" map-info">
             <div class="logo">
-            <img src="./img/logo_senac.png">
-        </div>
+                <img src="./img/senac_logo.png">
+            </div>
         
         <div class="flex">
             <div class="btn">
@@ -79,7 +81,17 @@ class Map {
                 </a>
             </div>
         </div>
-              
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        </div>
+    
               `
             let infowindow = new google.maps.InfoWindow({
                 content: contentString,

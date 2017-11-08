@@ -8,3 +8,4 @@ require('./js/home');
 require('./img/icon_sajic.jpg')
 require('./js/firebase') 
 require('./img/marker.png')
+require('./img/senac_logo.png')

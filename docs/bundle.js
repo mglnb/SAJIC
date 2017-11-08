@@ -24408,7 +24408,8 @@ __webpack_require__(86);
 __webpack_require__(87);
 __webpack_require__(97);
 __webpack_require__(98);
-__webpack_require__(193);
+__webpack_require__(181);
+__webpack_require__(194);
 
 /***/ }),
 /* 82 */
@@ -25403,7 +25404,7 @@ var Map = function () {
                     anchor: new google.maps.Point(65, 140)
                 };
 
-                var contentString = '\n            <div class="logo">\n            <img src="./img/logo_senac.png">\n        </div>\n        \n        <div class="flex">\n            <div class="btn">\n                <a href="#">\n                    <div class="icon">\n                        <img src="http://fogosglobo.com.br/img/250x250-circle.png" alt="">\n                    </div>\n                    <div class="info">\n                        (53) 3225-6918\n                    </div>\n                </a>\n            </div>\n            <div class="btn">\n                <a href="#">\n                    <div class="icon">\n                        <img src="http://fogosglobo.com.br/img/250x250-circle.png" alt="">\n                    </div>\n                    <div class="info">\n                        Rua Gon\xE7alves Chaves, 602, Centro, Pelotas\n                    </div>\n                </a>\n            </div>\n            <div class="btn">\n                <a href="#">\n                    <div class="icon">\n                        <img src="http://fogosglobo.com.br/img/250x250-circle.png" alt="">\n                    </div>\n                    <div class="info">\n                        Facebook\n                    </div>\n                </a>\n            </div>\n            <div class="btn">\n                <a href="#">\n                    <div class="icon">\n                        <img src="http://fogosglobo.com.br/img/250x250-circle.png" alt="">\n                    </div>\n                    <div class="info">\n                        Conhe\xE7a a Faculdade\n                    </div>\n                </a>\n            </div>\n        </div>\n              \n              ';
+                var contentString = '\n\n            <div class=" map-info">\n            <div class="logo">\n                <img src="./img/senac_logo.png">\n            </div>\n        \n        <div class="flex">\n            <div class="btn">\n                <a href="#">\n                    <div class="icon">\n                        <img src="http://fogosglobo.com.br/img/250x250-circle.png" alt="">\n                    </div>\n                    <div class="info">\n                        (53) 3225-6918\n                    </div>\n                </a>\n            </div>\n            <div class="btn">\n                <a href="#">\n                    <div class="icon">\n                        <img src="http://fogosglobo.com.br/img/250x250-circle.png" alt="">\n                    </div>\n                    <div class="info">\n                        Rua Gon\xE7alves Chaves, 602, Centro, Pelotas\n                    </div>\n                </a>\n            </div>\n            <div class="btn">\n                <a href="#">\n                    <div class="icon">\n                        <img src="http://fogosglobo.com.br/img/250x250-circle.png" alt="">\n                    </div>\n                    <div class="info">\n                        Facebook\n                    </div>\n                </a>\n            </div>\n            <div class="btn">\n                <a href="#">\n                    <div class="icon">\n                        <img src="http://fogosglobo.com.br/img/250x250-circle.png" alt="">\n                    </div>\n                    <div class="info">\n                        Conhe\xE7a a Faculdade\n                    </div>\n                </a>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <br>\n        <br>\n        <br>\n        <br>\n        <br>\n        </div>\n    \n              ';
                 var infowindow = new google.maps.InfoWindow({
                     content: contentString
                 });
@@ -40981,7 +40982,12 @@ function stop(id) {
 
 
 /***/ }),
-/* 181 */,
+/* 181 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/marker.png";
+
+/***/ }),
 /* 182 */,
 /* 183 */,
 /* 184 */,
@@ -40993,10 +40999,11 @@ function stop(id) {
 /* 190 */,
 /* 191 */,
 /* 192 */,
-/* 193 */
+/* 193 */,
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/marker.png";
+module.exports = __webpack_require__.p + "img/senac_logo.png";
 
 /***/ })
 /******/ ]);

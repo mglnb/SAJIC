@@ -1,5 +1,29 @@
 #eventMap {
     width: 100%;
-    height: 600px;
-    // background: red;
+    height: 600px; // background: red;
+}
+
+.map-info {
+    .logo {
+        text-align: center;
+        img {
+            width: 80%;
+        }
+        margin-bottom: 40px;
+    }
+    img {
+        width: 100px;
+    }
+    height: auto;
+    a {
+        font-size: 14px;
+    }
+    .btn {
+        flex: 1;
+        line-height: 20px;
+        font-family: "Raleway", Helvetica, sans-serif;
+        .info {
+            margin-top: 10px;
+        }
+    }
 }
