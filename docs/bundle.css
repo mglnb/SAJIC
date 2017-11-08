@@ -520,6 +520,8 @@ form .dropdown + i {
 
 .timeline_section {
   padding: 100px 0; }
+  .timeline_section .fullwidth {
+    width: 100%; }
   .timeline_section h1 {
     text-align: center;
     font-size: 3em;
