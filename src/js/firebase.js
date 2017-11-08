@@ -42,6 +42,7 @@ class Firebase {
             .once("value")
             .then(snapshot => {
                 let palestras = snapshot
+                let contador = 0                
                 palestras.forEach((value, index) => {
                     palestraKey = value.key
                     // console.log('i', value.key)
@@ -62,6 +63,60 @@ class Firebase {
                                             </div>
                                     </li>`)
                     }
+                    // Timeline JS
+
+
+                    console.warn(contador)    
+                    let timelineTemplate = contador % 2 == 0 
+                    ? `<li class="entry entry--left">
+                      <div class="entry__content">
+                          <div class="row entry__img ">
+                              <figcaption>${value.val().palestrante}</figcaption>
+                              <figure>
+                                  <img src="${value.val().img}" alt="">
+                              </figure>
+                          </div>
+                          <div class="row">
+                              <div class="fullwidth">
+                                  <h2>${value.val().palestra}</h2>
+                                  <p>${value.val().descricao}</p>
+                                  <p class="time">${value.val().dia}</p>
+                              </div>
+                          </div>
+                      </li>`
+                      :`<li class="entry entry--right">
+                      <div class="entry__content">
+                          <div class="row entry__img ">
+                              <figure>
+                                  <img src="${value.val().img}" alt="">
+                              </figure>
+                              <figcaption>${value.val().palestrante}</figcaption>                              
+                          </div>
+                          <div class="row">
+                            <div class="fullwidth">
+                                <h2>${value.val().palestra}</h2>
+                                <p>${value.val().descricao}</p>
+                                <p class="time">${value.val().dia}</p>
+                            </div>
+                          </div>
+                      </li>`
+                    contador++           
+                    let date = value.val().dia
+                    console.log(new Date(value.val().dia.substring(0,10)))                    
+
+                    if(date.includes('22-11-2017')) {
+                        console.log(1)
+                        $('.timeline--first').append(timelineTemplate)
+                    } else if (date.includes('23-11-2017')) {
+                        console.log(2)
+                        
+                        $('.timeline--second').append(timelineTemplate)
+                    } else if(date.includes('24-11-2017')){
+                        console.log(3)
+                        
+                        $('.timeline--last').append(timelineTemplate)
+                    }
+
                 })
                 return palestraKey
             }).then((key) => {
@@ -81,6 +136,10 @@ class Firebase {
                             $('.multiSel').append(html)
                             // console.log('checkado', self.$palestras)
                             $('.hida').hide();
+
+
+
+
                         } else {
                             let index = self.$palestras.indexOf(key)
                             let indexArray = arrayPalestras.indexOf(arrayPalestras[arrayPalestras.length - 1])
@@ -102,7 +161,6 @@ class Firebase {
                     })
                 })
             })
-
 
         this.$subscriber.submit.on('click', (e) => {
             e.stopPropagation()

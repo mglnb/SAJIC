@@ -28709,6 +28709,7 @@ var Firebase = function () {
             var palestraKey = void 0;
             this.$db.ref("palestra").once("value").then(function (snapshot) {
                 var palestras = snapshot;
+                var contador = 0;
                 palestras.forEach(function (value, index) {
                     palestraKey = value.key;
                     // console.log('i', value.key)
@@ -28717,6 +28718,27 @@ var Firebase = function () {
                         _this.$ul.append('<li>\n                                                <div class="palestra">\n                                                    <input id="palestra-' + value.key + '" type="checkbox" value="' + value.val().palestra + '" disabled />\n                                                    <label for="palestra-' + value.key + '" disabled><s>' + value.val().palestra + '</s></span>\n                                                    <small>Esgotado</small>\n                                                </div>\n                                        </li>');
                     } else {
                         _this.$ul.append('<li>\n                                            <div class="palestra">\n                                                <input id="palestra-' + value.key + '" type="checkbox" value="' + value.val().palestra + '" />\n                                                <label for="palestra-' + value.key + '">' + value.val().palestra + '</span>\n                                            </div>\n                                    </li>');
+                    }
+                    // Timeline JS
+
+
+                    console.warn(contador);
+                    var timelineTemplate = contador % 2 == 0 ? '<li class="entry entry--left">\n                      <div class="entry__content">\n                          <div class="row entry__img ">\n                              <figcaption>' + value.val().palestrante + '</figcaption>\n                              <figure>\n                                  <img src="' + value.val().img + '" alt="">\n                              </figure>\n                          </div>\n                          <div class="row">\n                              <div class="fullwidth">\n                                  <h2>' + value.val().palestra + '</h2>\n                                  <p>' + value.val().descricao + '</p>\n                                  <p class="time">' + value.val().dia + '</p>\n                              </div>\n                          </div>\n                      </li>' : '<li class="entry entry--right">\n                      <div class="entry__content">\n                          <div class="row entry__img ">\n                              <figure>\n                                  <img src="' + value.val().img + '" alt="">\n                              </figure>\n                              <figcaption>' + value.val().palestrante + '</figcaption>                              \n                          </div>\n                          <div class="row">\n                            <div class="fullwidth">\n                                <h2>' + value.val().palestra + '</h2>\n                                <p>' + value.val().descricao + '</p>\n                                <p class="time">' + value.val().dia + '</p>\n                            </div>\n                          </div>\n                      </li>';
+                    contador++;
+                    var date = value.val().dia;
+                    console.log(new Date(value.val().dia.substring(0, 10)));
+
+                    if (date.includes('22-11-2017')) {
+                        console.log(1);
+                        (0, _jquery2.default)('.timeline--first').append(timelineTemplate);
+                    } else if (date.includes('23-11-2017')) {
+                        console.log(2);
+
+                        (0, _jquery2.default)('.timeline--second').append(timelineTemplate);
+                    } else if (date.includes('24-11-2017')) {
+                        console.log(3);
+
+                        (0, _jquery2.default)('.timeline--last').append(timelineTemplate);
                     }
                 });
                 return palestraKey;
