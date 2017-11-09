@@ -169,6 +169,8 @@
                 overflow-y: scroll;
                 height: 60vh;
             }
+            max-height: 60vh;
+            overflow-y: auto; 
             .list_row {
                 @include mobile {
                     flex-direction: row;

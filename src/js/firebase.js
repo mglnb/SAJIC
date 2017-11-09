@@ -42,7 +42,7 @@ class Firebase {
             .once("value")
             .then(snapshot => {
                 let palestras = snapshot
-                let contador = 0                
+                let contador = 0
                 palestras.forEach((value, index) => {
                     palestraKey = value.key
                     // console.log('i', value.key)
@@ -67,8 +67,8 @@ class Firebase {
 
 
                     // console.warn(contador)    
-                    let timelineTemplate = contador % 2 == 0 
-                    ? `<li class="entry entry--left">
+                    let timelineTemplate = contador % 2 == 0 ?
+                        `<li class="entry entry--left">
                       <div class="entry__content">
                           <div class="row entry__img ">
                               <figcaption>${value.val().palestrante}</figcaption>
@@ -83,8 +83,8 @@ class Firebase {
                                   <p class="time">${value.val().dia}</p>
                               </div>
                           </div>
-                      </li>`
-                      :`<li class="entry entry--right">
+                      </li>` :
+                        `<li class="entry entry--right">
                       <div class="entry__content">
                           <div class="row entry__img ">
                               <figure>
@@ -100,17 +100,32 @@ class Firebase {
                             </div>
                           </div>
                       </li>`
-                    contador++           
+                    contador++
                     let date = value.val().dia
                     // console.log(new Date(value.val().dia.substring(0,10)))                    
 
-                    if(date.includes('22-11-2017')) {
+                    if (date.includes('22-11-2017')) {
                         $('.timeline--first').append(timelineTemplate)
                     } else if (date.includes('23-11-2017')) {
                         $('.timeline--second').append(timelineTemplate)
-                    } else if(date.includes('24-11-2017')){
+                    } else if (date.includes('24-11-2017')) {
                         $('.timeline--last').append(timelineTemplate)
                     }
+
+                    let templateMapa = `
+                    <li>
+                        <p class="list_content">${value.val().palestra}</p>
+                        <div class="row list_row">
+                            <span class="column">${value.val().palestrante}</span>
+                            <span class="column right">${value.val().dia}</span>
+                        </div>
+                    </li>
+                `
+
+                let sala = value.val().sala !== "Sala" ? value.val().sala.toLowerCase() : "auditório"
+                   $(`[data-id="${sala}"]`).find('ul').append(templateMapa)
+
+
 
                 })
                 return palestraKey
