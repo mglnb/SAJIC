@@ -103,7 +103,7 @@ class Firebase {
                     contador++
                     let date = value.val().dia
                     // console.log(new Date(value.val().dia.substring(0,10)))                    
-
+                    debugger
                     if (date.includes('22-11-2017')) {
                         $('.timeline--first').append(timelineTemplate)
                     } else if (date.includes('23-11-2017')) {
@@ -122,23 +122,21 @@ class Firebase {
                     </li>
                 `
 
-                let sala = value.val().sala !== "Sala" ? value.val().sala.toLowerCase() : "auditório"
-                   $(`[data-id="${sala}"]`).find('ul').append(templateMapa)
-
-
-
+                    let sala = value.val().sala !== "Sala" ? value.val().sala.toLowerCase() : "auditório"
+                    $(`[data-id="${sala}"]`).find('ul').append(templateMapa)
                 })
-                return palestraKey
-            }).then((key) => {
+            }).then(() => {
                 // visual
                 let arrayPalestras = []
                 let self = this;
                 let palestras = document.querySelectorAll('.palestra')
                 palestras.forEach((value, index) => {
                     value.addEventListener('change', function () {
+                        let key = this.children[0].id.replace('palestra-', '')
                         if (this.children[0].checked == true) {
                             // firebase
                             self.$palestras.push(key)
+                            console.log(key)
                             // visual
                             arrayPalestras.push(this.children[0].value)
 
@@ -146,10 +144,6 @@ class Firebase {
                             $('.multiSel').append(html)
                             // console.log('checkado', self.$palestras)
                             $('.hida').hide();
-
-
-
-
                         } else {
                             let index = self.$palestras.indexOf(key)
                             let indexArray = arrayPalestras.indexOf(arrayPalestras[arrayPalestras.length - 1])

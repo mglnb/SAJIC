@@ -83,6 +83,10 @@
                 font-size: 14px;
             }
             line-height: 1.4;
+            &.time {
+                font-size: 13px;
+                padding-top: 10px;
+            }
         }
         &--right {
             margin-left: 50%;

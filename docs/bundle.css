@@ -1253,6 +1253,9 @@ License: https://linearicons.com/free/license
       @media screen and (max-width: 768px) {
         .timeline_section .entry p {
           font-size: 14px; } }
+      .timeline_section .entry p.time {
+        font-size: 13px;
+        padding-top: 10px; }
     .timeline_section .entry--right {
       margin-left: 50%; }
       @media screen and (max-width: 768px) {
@@ -1548,9 +1551,11 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
         transform: rotate(-45deg); }
 
 .partners_section {
-  padding: 100px 0; }
+  padding: 100px 0;
+  text-align: center; }
+  .partners_section img {
+    width: 50vw; }
   .partners_section h1 {
-    text-align: center;
     font-size: 3em;
     letter-spacing: 3px;
     font-weight: 700; }
@@ -1565,28 +1570,34 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
     flex-wrap: wrap;
     max-width: 550px;
     margin: 0 auto;
-    padding: 50px 0; }
+    padding: 0px 0; }
     .partners_section .companies .logo {
-      margin: 15px;
+      margin: 5px;
       cursor: pointer; }
       .partners_section .companies .logo-mock {
-        width: 100px;
+        width: 160px;
         height: 100px;
         background: #aaa;
-        border-radius: 50px;
+        border-radius: 3px;
         position: relative;
         transition: transform .2s; }
-        .partners_section .companies .logo-mock:before {
-          content: 'L';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          color: #FFF;
-          font-size: 36px;
-          font-weight: 600; }
       .partners_section .companies .logo:hover {
         transform: scale(1.05); }
+      .partners_section .companies .logo.porto5 {
+        background: url("http://porto5.com.br/images/logo.png") no-repeat center center;
+        background-size: contain; }
+      .partners_section .companies .logo.companytec {
+        background: url("http://www.companytec.com.br/images/uploads/logo/LogoSuperior.png") no-repeat center center;
+        background-size: contain; }
+      .partners_section .companies .logo.gestor {
+        background: url("http://www.cigam.com.br/gestor/wp-content/themes/gestor/images/cigam_logo.png") no-repeat center center;
+        background-size: contain; }
+      .partners_section .companies .logo.doctornet {
+        background: url("http://www.doctornet.com.br/portal/wp-content/themes/doctornet/img/logo-site.png") no-repeat center center;
+        background-size: contain; }
+      .partners_section .companies .logo.nodo {
+        background: url("http://nodo.cc/img/logo.png") no-repeat center center;
+        background-size: contain; }
 
 #eventMap {
   width: 100%;
