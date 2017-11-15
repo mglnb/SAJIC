@@ -24411,7 +24411,7 @@ __webpack_require__(98);
 __webpack_require__(181);
 __webpack_require__(182);
 __webpack_require__(183);
-__webpack_require__(184);
+__webpack_require__(196);
 
 /***/ }),
 /* 82 */
@@ -24658,7 +24658,7 @@ $jscomp.polyfill("Array.prototype.find", function (a) {
 /* 84 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleNotFoundError: Module not found: Error: Can't resolve './img/porto5.png' in 'C:\\Users\\Migs\\Projects\\SAJIC\\src\\sass'\n    at factoryCallback (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\webpack\\lib\\Compilation.js:276:40)\n    at factory (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\webpack\\lib\\NormalModuleFactory.js:235:20)\n    at resolver (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\webpack\\lib\\NormalModuleFactory.js:60:20)\n    at asyncLib.parallel.e (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\webpack\\lib\\NormalModuleFactory.js:127:20)\n    at C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\webpack\\node_modules\\async\\dist\\async.js:3861:9\n    at C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\webpack\\node_modules\\async\\dist\\async.js:421:16\n    at iteratorCallback (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\webpack\\node_modules\\async\\dist\\async.js:996:13)\n    at C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\webpack\\node_modules\\async\\dist\\async.js:906:16\n    at C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\webpack\\node_modules\\async\\dist\\async.js:3858:13\n    at resolvers.normal.resolve (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\webpack\\lib\\NormalModuleFactory.js:119:22)\n    at onError (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\enhanced-resolve\\lib\\Resolver.js:65:10)\n    at loggingCallbackWrapper (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\enhanced-resolve\\lib\\createInnerCallback.js:31:19)\n    at runAfter (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\enhanced-resolve\\lib\\Resolver.js:158:4)\n    at innerCallback (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\enhanced-resolve\\lib\\Resolver.js:146:3)\n    at loggingCallbackWrapper (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\enhanced-resolve\\lib\\createInnerCallback.js:31:19)\n    at next (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\tapable\\lib\\Tapable.js:252:11)\n    at C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\enhanced-resolve\\lib\\UnsafeCachePlugin.js:40:4\n    at loggingCallbackWrapper (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\enhanced-resolve\\lib\\createInnerCallback.js:31:19)\n    at runAfter (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\enhanced-resolve\\lib\\Resolver.js:158:4)\n    at innerCallback (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\enhanced-resolve\\lib\\Resolver.js:146:3)\n    at loggingCallbackWrapper (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\enhanced-resolve\\lib\\createInnerCallback.js:31:19)\n    at next (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\tapable\\lib\\Tapable.js:252:11)\n    at innerCallback (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\enhanced-resolve\\lib\\Resolver.js:144:11)\n    at loggingCallbackWrapper (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\enhanced-resolve\\lib\\createInnerCallback.js:31:19)\n    at next (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\tapable\\lib\\Tapable.js:249:35)\n    at resolver.doResolve.createInnerCallback (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\enhanced-resolve\\lib\\DescriptionFilePlugin.js:44:6)\n    at loggingCallbackWrapper (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\enhanced-resolve\\lib\\createInnerCallback.js:31:19)\n    at afterInnerCallback (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\enhanced-resolve\\lib\\Resolver.js:168:10)\n    at loggingCallbackWrapper (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\enhanced-resolve\\lib\\createInnerCallback.js:31:19)\n    at next (C:\\Users\\Migs\\Projects\\SAJIC\\node_modules\\tapable\\lib\\Tapable.js:252:11)");
 
 /***/ }),
 /* 85 */
@@ -28744,7 +28744,6 @@ var Firebase = function () {
                     // console.warn(contador)    
                     var timelineTemplate = contador % 2 == 0 ? '<li class="entry entry--left">\n                      <div class="entry__content">\n                          <div class="row entry__img ">\n                              <figcaption>' + value.val().palestrante + '</figcaption>\n                              <figure>\n                                  <img src="' + value.val().img + '" alt="">\n                              </figure>\n                          </div>\n                          <div class="row">\n                              <div class="fullwidth">\n                                  <h2>' + value.val().palestra + '</h2>\n                                  <p>' + value.val().descricao + '</p>\n                                  <p class="time">' + value.val().dia + '</p>\n                              </div>\n                          </div>\n                      </li>' : '<li class="entry entry--right">\n                      <div class="entry__content">\n                          <div class="row entry__img ">\n                              <figure>\n                                  <img src="' + value.val().img + '" alt="">\n                              </figure>\n                              <figcaption>' + value.val().palestrante + '</figcaption>                              \n                          </div>\n                          <div class="row">\n                            <div class="fullwidth">\n                                <h2>' + value.val().palestra + '</h2>\n                                <p>' + value.val().descricao + '</p>\n                                <p class="time">' + value.val().dia + '</p>\n                            </div>\n                          </div>\n                      </li>';
                     contador++;
-                    console.log(contador % 2);
                     var date = value.val().dia;
                     // console.log(new Date(value.val().dia.substring(0,10)))                    
                     if (date.includes('22-11-2017')) {
@@ -41064,7 +41063,19 @@ document.addEventListener && document.addEventListener("DOMContentLoaded", funct
 }, !1);
 
 /***/ }),
-/* 184 */
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/porto5.png";

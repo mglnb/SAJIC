@@ -104,7 +104,6 @@ class Firebase {
                           </div>
                       </li>`
                     contador++
-                    console.log(contador % 2)
                     let date = value.val().dia
                     // console.log(new Date(value.val().dia.substring(0,10)))                    
                     if (date.includes('22-11-2017')) {
