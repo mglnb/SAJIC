@@ -39,6 +39,7 @@ class Firebase {
         let palestraKey
         this.$db
             .ref("palestra")
+            .orderByChild('dia')
             .once("value")
             .then(snapshot => {
                 let palestras = snapshot
@@ -65,8 +66,9 @@ class Firebase {
                     }
                     // Timeline JS
 
-
+                    
                     // console.warn(contador)    
+                    debugger
                     let timelineTemplate = contador % 2 == 0 ?
                         `<li class="entry entry--left">
                       <div class="entry__content">
@@ -101,14 +103,16 @@ class Firebase {
                           </div>
                       </li>`
                     contador++
+                    console.log(contador % 2)
                     let date = value.val().dia
                     // console.log(new Date(value.val().dia.substring(0,10)))                    
-                    debugger
                     if (date.includes('22-11-2017')) {
                         $('.timeline--first').append(timelineTemplate)
                     } else if (date.includes('23-11-2017')) {
                         $('.timeline--second').append(timelineTemplate)
                     } else if (date.includes('24-11-2017')) {
+                        $('.timeline--third').append(timelineTemplate)
+                    } else if(date.includes('25-11-2017')) {
                         $('.timeline--last').append(timelineTemplate)
                     }
 
