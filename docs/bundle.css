@@ -369,6 +369,7 @@ body {
     background: green; }
 
 #modal-inscricao > .card {
+  max-width: 540px;
   padding: 30px; }
 
 #modal-inscricao .column {
