@@ -369,6 +369,7 @@ body {
     background: green; }
 
 #modal-inscricao > .card {
+  max-width: 540px;
   padding: 30px; }
 
 #modal-inscricao .column {
@@ -1586,7 +1587,7 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
       .partners_section .companies .logo:hover {
         transform: scale(1.05); }
       .partners_section .companies .logo.porto5 {
-        background: url(/img/porto5.png) no-repeat center center;
+        background: url(img/porto5.png) no-repeat center center;
         background-size: contain; }
       .partners_section .companies .logo.companytec {
         background: url("http://www.companytec.com.br/images/uploads/logo/LogoSuperior.png") no-repeat center center;
