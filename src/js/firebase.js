@@ -48,27 +48,28 @@ class Firebase {
                     palestraKey = value.key
                     // console.log('i', value.key)
                     // console.dir(value.val().subscribers)
-                    if (Object.keys(value.val().subscribers).length >= value.val().numeroPessoas) {
-                        this.$ul.append(`<li>
+                    if (value.val().sala !== "Cantina") {
+                        if (Object.keys(value.val().subscribers).length >= value.val().numeroPessoas) {
+                            this.$ul.append(`<li>
                                                 <div class="palestra">
                                                     <input id="palestra-${value.key}" type="checkbox" value="${value.val().palestra}" disabled />
                                                     <label for="palestra-${value.key}" disabled><s>${value.val().palestra}</s></span>
                                                     <small>Esgotado</small>
                                                 </div>
                                         </li>`)
-                    } else {
-                        this.$ul.append(`<li>
+                        } else {
+                            this.$ul.append(`<li>
                                             <div class="palestra">
                                                 <input id="palestra-${value.key}" type="checkbox" value="${value.val().palestra}" />
                                                 <label for="palestra-${value.key}">${value.val().palestra}</span>
                                             </div>
                                     </li>`)
+                        }
                     }
                     // Timeline JS
 
-                    
+
                     // console.warn(contador)    
-                    debugger
                     let timelineTemplate = contador % 2 == 0 ?
                         `<li class="entry entry--left">
                       <div class="entry__content">
@@ -112,7 +113,7 @@ class Firebase {
                         $('.timeline--second').append(timelineTemplate)
                     } else if (date.includes('24-11-2017')) {
                         $('.timeline--third').append(timelineTemplate)
-                    } else if(date.includes('25-11-2017')) {
+                    } else if (date.includes('25-11-2017')) {
                         $('.timeline--last').append(timelineTemplate)
                     }
 

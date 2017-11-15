@@ -32,7 +32,7 @@
             bottom: 0;
             margin-left: 1px;
         }
-        &.last-child:after{
+        &.last-child:after {
             height: 86.5%;
         }
     }
@@ -107,6 +107,10 @@
                 left: -11px;
             }
         }
+        figcaption {
+            margin: 0 10px;
+            
+        }
         &--left {
             text-align: right;
             @include mobile {
@@ -131,7 +135,6 @@
             }
             @include tablet {
                 padding: 20px 30px;
-                
             }
         }
         &__content .row {
@@ -152,7 +155,7 @@
             width: 80px;
             height: 80px;
             object-fit: cover;
-            margin: 0 10px;
+            margin: 0;
         }
         &:before {
             content: "";
@@ -185,5 +188,4 @@
             }
         }
     }
-
 }

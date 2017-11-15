@@ -41,7 +41,7 @@ class Map {
         
         <div class="flex">
             <div class="btn">
-                <a href="#">
+                <a href="tel:5332256918">
                     <div class="icon">
                         <span class="lnr lnr-phone"></span>
                     </div>
@@ -61,7 +61,7 @@ class Map {
                 </a>
             </div>
             <div class="btn">
-                <a href="#">
+                <a target="_blank" href="http://www.senacrs.com.br/unidades.asp?unidade=78">
                     <div class="icon">
                     <span class="lnr lnr-graduation-hat"></span>                    
                     
