@@ -1596,7 +1596,7 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
         background: url("http://www.cigam.com.br/gestor/wp-content/themes/gestor/images/cigam_logo.png") no-repeat center center;
         background-size: contain; }
       .partners_section .companies .logo.doctornet {
-        background: url("http://www.doctornet.com.br/portal/wp-content/themes/doctornet/img/logo-site.png") no-repeat center center;
+        background: url("./img/doctornet.png") no-repeat center center;
         background-size: contain; }
       .partners_section .companies .logo.nodo {
         background: url("http://nodo.cc/img/logo.png") no-repeat center center;
