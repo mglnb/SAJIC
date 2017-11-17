@@ -1401,7 +1401,7 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
       display: block; }
      h1 small {
       display: block;
-      font-size: 16px;
+      font-size: 14px;
       letter-spacing: 1px;
       font-weight: 300; }
   .mapa_section [class^='fil'] {
