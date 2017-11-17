@@ -1399,7 +1399,7 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
       height: 1px;
       background: #fff;
       display: block; }
-    .mapa_section h1 small {
+     h1 small {
       display: block;
       font-size: 16px;
       letter-spacing: 1px;
