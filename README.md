@@ -1,8 +1,5 @@
 # Sajic 2018
 
-* Senac Rs
-
-
 # Rode o projeto: 
 
 ### Instale as dependências
