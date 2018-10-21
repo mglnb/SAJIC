@@ -1,0 +1,90 @@
+@media (min-width: 375px){
+
+  .home-content--description { font-size: .8em !important }
+}
+
+
+
+@media (min-width: 500px){
+
+  .home-content--description { font-size: .9em !important }
+
+}
+
+@media (min-width: 500px){
+  .home-content__logo{ width: 50% !important }
+  .nav-container--item { font-size:  1.5em !important }
+}
+
+
+@media (min-width: 800px){
+  .div-scroll{ bottom: 4% }
+  .home-content__logo
+  {
+     width: 30% !important;
+     &--logo1{ display: none !important }
+     &--logo2{ display: flex !important }
+   }
+
+}
+
+@media (min-width: 1024px){
+  .home-content__logo{ width: 25% !important }
+  .home-content--description { font-size: .85em !important }
+  .hamburguer { display: none}
+  .div-scroll{ bottom: 3% }
+
+  nav
+  {
+    opacity:1 !important;
+    visibility: visible !important;
+    height: 100%;
+    background: transparent;
+  }
+
+  .nav-container
+  {
+    flex-direction: row !important;
+    // justify-content: flex-end !important;
+    padding: 1.5em 1em !important;
+    &--item
+    {
+      font-size: .8em !important;
+      margin-right: 1.8% !important;
+      margin-top: 0 !important;
+      letter-spacing: 1px !important;
+
+      &:nth-child(1){
+        margin-right: 1.8% !important;
+        margin-top: 0 !important;
+        display: block !important;
+      }
+
+      &:nth-child(6){
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 1280px){
+  .home-content__logo{ width: 20% !important }
+  .home-content--description { font-size: .8em !important }
+}
+
+@media (min-width: 1366px){
+  .home-content__logo{ width: 18% !important }
+}
+
+@media (min-width: 1440px){
+  .home-content__logo{ width: 21% !important }
+}
+
+@media (min-width: 1680px){
+  .home-content__logo{ width: 19% !important }
+}
+
+@media (min-width: 1920px){
+  .home-content--description { font-size: .9em !important }
+}

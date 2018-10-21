@@ -1,0 +1,43 @@
+%page
+{
+  width: $full-size;
+  height: 100vh;
+}
+
+%column
+{
+  display: flex;
+  flex-direction: column;
+}
+
+%row
+{
+  display: flex;
+  flex-direction: row;
+}
+
+%center-row
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+%center-column
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+%fully-centralized-row
+{
+  @extend %center-row;
+  justify-content: center;
+}
+
+%fully-centralized-column
+{
+  @extend %center-column;
+  justify-content: center;
+}
