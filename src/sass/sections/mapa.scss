@@ -1,8 +1,9 @@
 .mapa_section {
-    text-align: center;
-    background: linear-gradient(to right, rgba(2, 137, 209, 0.9), rgba(2, 137, 209, 0.9)), url(../img/bg-map.jpg) fixed no-repeat;
-    background-size: cover;
-    padding: 50px 0;
+  position: relative;
+  text-align: center;
+  background: linear-gradient(to right, rgba(2, 137, 209, 0.9), rgba(2, 137, 209, 0.9)), url(../img/bg-map.jpg) fixed no-repeat;
+  background-size: cover;
+  padding: 50px 0;
     .map {
         @include mobile {
             overflow-y: scroll
@@ -153,11 +154,11 @@
             }
             @include mobile {
                 width: 100%;
-            
+
             }
             @include tablet {
                 width: 100%;
-            
+
             }
             .title {
                 text-align: center;
@@ -170,7 +171,7 @@
                 height: 60vh;
             }
             max-height: 60vh;
-            overflow-y: auto; 
+            overflow-y: auto;
             .list_row {
                 @include mobile {
                     flex-direction: row;
@@ -180,7 +181,7 @@
                     margin: 0 !important;
                     font-size: 13px;
                     line-height: 31px;
-                   
+
                 }
                 .right {
                     text-align: right;

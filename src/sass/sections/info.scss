@@ -2,7 +2,9 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
     border-color: $coral-blue;
 }
 .info_section {
-    color: #fff;
+  position: relative;
+  color: #fff;
+
     .column {
         text-align: center;
         padding: 100px 0;
@@ -22,7 +24,7 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
                 font-size: 14px;
             }
         }
-    
+
     }
     .column:first-child {
         background: no-repeat center center;
@@ -30,13 +32,13 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
         background-size: cover;
         position: relative;
         z-index: 1;
-        
+
     }
     .column:last-child {
         background: no-repeat top center;
         background-image: linear-gradient(to right, rgba(64, 62, 175, 0.712),rgba(64, 62, 175, 0.712)) ,url(../img/bg-palestras.jpg);
         background-size: cover;
-        
+
     }
 
 }

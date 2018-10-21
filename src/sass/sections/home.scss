@@ -1,0 +1,285 @@
+.home-page
+{
+  position: relative;
+  background: $coral-blue;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+
+  &__bg
+  {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .15;
+    filter: blur(9px);
+
+  }
+
+  // &__logo
+  // {
+  //   position: absolute;
+  //   z-index: 3;
+  //   width: 20%;
+  // }
+
+  .home-content
+  {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+
+    &__logo
+    {
+      &--logo1{ width: 100%; height: 100%; display: flex}
+      &--logo2{ width: 100%; height: 100%; display: none}
+      width: 60%;
+      // background: red;
+    }
+
+    &--description
+    {
+      color: #fff;
+      font-size: .7em;
+      font-weight: bold;
+      margin-top: 10px;
+      width: 100vw;
+      text-align: center;
+    }
+
+    // &__container
+    // {
+    //   width: 100%;
+    //   height: 100%;
+    //   font-weight: bold;
+    //   margin-top: -1.3em;
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    //   align-items: center;
+    // }
+
+  }
+}
+
+
+
+.hamburguer {
+  position:absolute;
+  outline:none;
+  right:0;
+  border:0;
+  margin: 1.5em;
+  z-index:9998;
+  &:hover {
+    cursor:pointer;
+  }
+  //HAMBURGUER BARS
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition-duration: 0.4s;
+  }
+}
+
+//BARS TRANSITION ON CLICK
+.toggle .bar1 {
+  transform: rotate(-45deg) translate(-3px, 1px);
+  -webkit-transform: rotate(-45deg) translate(-3px, 1px);
+  background:white;
+}
+.toggle .bar2 {
+  opacity: 0;
+}
+.toggle .bar3 {
+  transform: rotate(45deg) translate(-10px, -8px);
+  -webkit-transform: rotate(45deg) translate(-10px, -8px);
+  background:white;
+}
+
+//NAV WITH LINKS
+nav {
+  background: $coral-blue;
+  opacity:0;
+  visibility: hidden;
+  width:100%;
+  height:100vh;
+  z-index:9998;
+  backface-visibility: none;
+  transition-duration:.5s;
+}
+.open
+{
+  visibility: visible;
+  opacity:1;
+}
+
+
+
+.head
+{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+
+  .nav-container
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em 1em;
+
+
+    &--item
+    {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.2em;
+      letter-spacing: 1px;
+      color: #fff;
+      // margin-right: 1.8%;
+      margin-top: 4%;
+      cursor: pointer;
+      &:nth-child(1){ margin: 0; display: none;}
+      &:after
+      {
+        background: #fff;
+        content: '';
+        display: block;
+        height: 2px;
+        margin: 3px auto;
+        transition: width .3s ease, background-color .3s ease;
+        width: 0px;
+      }
+
+      &:hover:after
+      {
+        background: #fff;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+
+
+/* Config */
+$color-bg: #1e1e1e;
+$color-particle: #fff;
+$spacing: 2560px;
+$time-1: 60s;
+$time-2: 120s;
+$time-3: 180s;
+$time-4: 600s;
+
+/* Pauls awesome mixin */
+@function particles($max) {
+   $val: 0px 0px $color-particle;
+   @for $i from 1 through $max {
+      $val: #{$val},
+      random($spacing)+px random($spacing)+px $color-particle;
+   }
+   @return $val;
+}
+
+@mixin particles($max) {
+   box-shadow: particles($max);
+}
+
+
+.animation-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.particle,
+.particle:after {
+  background: transparent;
+}
+
+.particle:after {
+  position: absolute;
+  content: "";
+  top: $spacing;
+}
+
+.particle-1 {
+  animation: animParticle $time-1 linear infinite;
+  @include particles(700);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-1:after {
+
+  @include particles(600);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-2 {
+  animation: animParticle $time-2 linear infinite;
+  @include particles(200);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-2:after {
+  @include particles(200);
+  height: 3px;
+  width: 3px;
+}
+
+.particle-3 {
+  animation: animParticle $time-3 linear infinite;
+  @include particles(100);
+  height: 4px;
+  width: 4px;
+}
+
+.particle-3:after {
+  @include particles(100);
+  height: 5px;
+  width: 5px;
+}
+
+.particle-4 {
+  animation: animParticle $time-4 linear infinite;
+
+  @include particles(400);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-4:after {
+
+  @include particles(400);
+  height: 1px;
+  width: 1px;
+}
+
+@keyframes animParticle {
+  from { transform: translateY(0px); }
+  to   { transform: translateY($spacing * -1); }
+}

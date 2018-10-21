@@ -1,0 +1,89 @@
+// @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
+
+.div-scroll
+{
+  position: absolute;
+  bottom: 10%;
+  left: auto;
+  right: auto;
+  // top: 85%;
+  padding-top: 4%;
+  z-index:1;
+
+  .scroll-link {
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    color: white;
+    // font : normal 2em 20px/1 'Josefin Sans', sans-serif;
+    letter-spacing: .2em;
+    transition: opacity .3s;
+    padding-top: 50px;
+
+    &:hover
+    {
+      opacity: .5;
+    }
+
+    .cylinder
+    {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 31px;
+      height: 53px;
+      margin-left: -15px;
+      border: 3px solid white;
+      border-radius: 50px;
+      box-sizing: border-box;
+
+      &:before
+      {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        content: '';
+        width: 6px;
+        height: 6px;
+        margin-left: -3px;
+        background-color: white;
+        border-radius: 100%;
+        -webkit-animation: scrolling 2s infinite;
+        animation: scrolling 2s infinite;
+      }
+    }
+  }
+}
+
+
+@-webkit-keyframes scrolling {
+  0% {
+    -webkit-transform: translate(0, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: translate(0, 20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes scrolling {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    transform: translate(0, 20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

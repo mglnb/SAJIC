@@ -10,6 +10,72 @@
   height: 100vh;
   z-index: 1;
 }
+/* adicionado para cumprir requisitos salomisticos */
+.head {
+  .header-logo
+  {
+    display: none;
+    position: absolute;
+    left: 2%;
+    top: 5%;
+    width: 8.5em;
+  }
+  &#centro 
+  {
+
+    text-decoration: underline overline;
+    letter-spacing: .2em;
+    transition: opacity .9s;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+    width: 100%;
+    text-align:center;
+    z-index:1;
+
+    /* pura mágica  hahahaahhaah*/
+    position: absolute;
+    top: 20%; 
+    margin-top: -25px; 
+   
+  }
+
+
+  .nav__item
+      {
+      &:nth-child(1){ margin-left: 28%; }
+      text-transform: uppercase;
+      float: left;
+      margin-left: 1.0em;
+      color: blue;
+      font-size: 1.2em;
+      font-weight: 900;
+      
+      &:hover {
+        color: white;
+        transition: width .8s ease, background-color .8s ease;
+      }
+      
+  
+      &:after
+      {
+        background: blue;
+        content: '';
+        display: block;
+        height: 2px;
+        margin: 3px auto;
+        transition: width .3s ease, background-color .3s ease;
+        width: 0px;
+      }
+
+      &:hover:after
+      {
+        background: blue;
+        width: 100%;
+      }
+      }
+  
+}
 
 #poly-output canvas {
   opacity: 0.9;
@@ -109,3 +175,4 @@
   font-size: 882.656px;
   font-family: 'Myriad Pro'
 }
+
