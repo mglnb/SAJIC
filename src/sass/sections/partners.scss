@@ -99,6 +99,14 @@
                 background: url('../../img/cigam.jpg') no-repeat center center;
                 background-size: contain;
             }
+            &.nodo {
+                background: url('../../img/nodo.png') no-repeat center center;
+                background-size: contain;
+            }
+            &.possible {
+                background: url('../../img/possible.png') no-repeat center center;
+                background-size: contain;
+            }
         }
     }
 }
