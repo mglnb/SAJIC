@@ -1,4 +1,5 @@
 .timeline_section {
+  position: relative;
     padding: 100px 0;
     .fullwidth {
         width: 100%;
@@ -109,7 +110,7 @@
         }
         figcaption {
             margin: 0 10px;
-            
+
         }
         &--left {
             text-align: right;
